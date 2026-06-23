@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四川省师范类院校 文科 近三年录取分数线完整排名（含民办）</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-secondary: #64748b;
+    --border: #e2e8f0;
+    --pub-accent: #2563eb;
+    --pri-accent: #dc2626;
+    --gold: #f59e0b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+  header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #7c3aed 100%);
+    color: #fff;
+    padding: 48px 20px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  header h1 { font-size: 1.9rem; margin-bottom: 8px; }
+  header p { opacity: 0.9; font-size: 1.05rem; }
+  header .badge-row { margin-top: 14px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  header .header-badge {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .badge-pub { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); }
+  .badge-pri { background: rgba(239,68,68,0.3); border: 1px solid rgba(239,68,68,0.4); }
+  .badge-info { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); font-weight: 400; }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .summary-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .summary-card .label { font-size: 0.82rem; color: var(--text-secondary); }
+  .summary-card .value { font-size: 1.7rem; font-weight: 700; margin: 4px 0; }
+  .summary-card .note { font-size: 0.78rem; color: var(--text-secondary); }
+  .val-pub { color: #2563eb; }
+  .val-pri { color: #dc2626; }
+
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 36px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-bar-pub { border-bottom-color: #2563eb; }
+  .section-bar-pri { border-bottom-color: #dc2626; }
+  .section-badge {
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 12px;
+  }
+  .sb-pub { background: #dbeafe; color: #1e40af; }
+  .sb-pri { background: #fee2e2; color: #991b1b; }
+
+  .table-wrap {
+    overflow-x: auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 28px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 1150px;
+  }
+  th {
+    background: #f1f5f9;
+    text-align: center;
+    padding: 11px 8px;
+    font-weight: 700;
+    color: #475569;
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--border);
+  }
+  th.pub-header { background: #dbeafe; color: #1e40af; }
+  th.pri-header { background: #fee2e2; color: #991b1b; }
+  td {
+    padding: 9px 8px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #f8fafc; }
+  .row-pub:hover { background: #eff6ff !important; }
+  .row-pri:hover { background: #fef2f2 !important; }
+
+  .school-cell { text-align: left; min-width: 180px; }
+  .school-name { font-weight: 700; font-size: 0.95rem; }
+  .school-sub { font-size: 0.75rem; color: var(--text-secondary); }
+  .score { font-weight: 700; font-size: 1rem; }
+  .score-sub { font-size: 0.75rem; color: #d97706; display: block; }
+  .rank-num { color: var(--text-secondary); font-size: 0.8rem; }
+
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .rank-1 .rank-badge { background: #fef3c7; color: #92400e; }
+  .rank-2 .rank-badge { background: #e5e7eb; color: #374151; }
+  .rank-3 .rank-badge { background: #fef3c7; color: #92400e; }
+  .others .rank-badge { background: #f1f5f9; color: #64748b; }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 1px 2px;
+  }
+  .tag-pub { background: #dbeafe; color: #1e40af; }
+  .tag-pri { background: #fee2e2; color: #991b1b; }
+  .tag-key { background: #dcfce7; color: #166534; }
+  .tag-province { background: #ede9fe; color: #5b21b6; }
+
+  .pub-row { border-left: 4px solid #2563eb; }
+  .pri-row { border-left: 4px solid #dc2626; }
+
+  /* separator row */
+  .sep-row td {
+    padding: 18px 8px;
+    background: #fefce8;
+    border-top: 3px dashed #ca8a04;
+    border-bottom: 3px dashed #ca8a04;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #854d0e;
+  }
+
+  .highlight-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 0.88rem;
+  }
+  .info-box {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 0.88rem;
+  }
+  .warn-box {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 14px 18px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.88rem;
+  }
+
+  .detail-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .detail-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
+  .detail-card .meta { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 12px; }
+
+  .source-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    padding: 2px 9px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .source-official { background: #dcfce7; color: #166534; }
+  .source-third { background: #fef3c7; color: #92400e; }
+
+  footer {
+    text-align: center;
+    padding: 32px 20px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  footer a { color: #2563eb; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 14px; height: 14px; border-radius: 3px; }
+  .ld-pub { background: #2563eb; }
+  .ld-pri { background: #dc2626; }
+
+  @media (max-width: 768px) {
+    header h1 { font-size: 1.3rem; }
+    .container { padding: 10px; }
+    td, th { padding: 5px 6px; font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 师范类院校 · 文科/历史类 · 近三年录取分数线完整排名</h1>
+  <p>四川省内公办7所 + 省外民办（独立学院）在川招生 · 2023–2025年</p>
+  <div class="badge-row">
+    <span class="header-badge badge-pub">🏛️ 公办：7所（均在四川省内）</span>
+    <span class="header-badge badge-pri">🏫 民办：5所（均为省外独立学院，在川招生）</span>
+    <span class="header-badge badge-info">📅 2023-2024为旧高考"文科" · 2025为新高考"历史类"</span>
+  </div>
+</header>
+
+<div style="background:#fff;border-bottom:1px solid #e2e8f0;padding:10px 0;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+  <span style="font-weight:600;color:#475569;">📍 当前页面：</span>
+  <span style="background:#7c3aed;color:#fff;padding:5px 14px;border-radius:14px;font-size:0.85rem;font-weight:600;">📊 完整排名（公办+民办）</span>
+  <a href="gongban.html" style="display:inline-block;margin-left:12px;padding:5px 14px;border-radius:14px;font-size:0.85rem;font-weight:600;background:#dbeafe;color:#1e40af;text-decoration:none;">🏛️ 只看四川省内公办7所 →</a>
+</div>
+
+<div class="container">
+
+  <!-- 概览 -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="label">🏛️ 省内公办师范</div>
+      <div class="value val-pub">7 所</div>
+      <div class="note">全部为公办本科</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">🏫 省外民办师范（在川招生）</div>
+      <div class="value val-pri">5 所</div>
+      <div class="note">独立学院性质</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">📈 公办最高分（2025）</div>
+      <div class="value val-pub">553</div>
+      <div class="note">四川师范大学</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">📉 民办最高分（2025）</div>
+      <div class="value val-pri">527</div>
+      <div class="note">衡阳师范南岳学院</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">📊 公办最低分（2025）</div>
+      <div class="value val-pub">524</div>
+      <div class="note">阿坝师范学院</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">📊 民办最低分（2025）</div>
+      <div class="value val-pri">469</div>
+      <div class="note">辽宁师范大学海华学院</div>
+    </div>
+  </div>
+
+  <!-- 重要说明 -->
+  <div class="info-box">
+    <strong>📌 关于"民办师范"的重要说明：</strong><br><br>
+    ① <strong>四川省内没有民办师范类本科院校。</strong>全省7所本科师范大学全部是公办。<br>
+    ② 在四川招生的民办师范类院校，均为<strong>省外公办师范大学的独立学院</strong>（即"母体"是外省公办师范，独立学院本身为民办性质），如衡阳师范学院南岳学院、南京师范大学泰州学院等。<br>
+    ③ 独立学院通常学费较高（每年2～5万元），录取分数显著低于同层次公办院校，是分数不占优考生的"保底"选择。<br>
+    ④ 2025年四川新高考后，批次合并为"本科批"，独立学院与公办本科在同一批次竞争。
+  </div>
+
+  <!-- 图例 -->
+  <div class="legend">
+    <div class="legend-item"><span class="legend-dot ld-pub"></span> <strong>公办</strong>（四川省内）</div>
+    <div class="legend-item"><span class="legend-dot ld-pri"></span> <strong>民办/独立学院</strong>（省外在川招生）</div>
+  </div>
+
+  <!-- ==================== 完整排名表 ==================== -->
+  <div class="section-title section-bar-pub">
+    📊 完整排名 · 文科/历史类 · 按2025年分数从高到低
+    <span class="section-badge sb-pub">公办+民办混合排名</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:40px;">序号</th>
+          <th style="text-align:left;min-width:170px;">学校名称</th>
+          <th style="width:80px;">所在地</th>
+          <th style="width:70px;">办学<br>性质</th>
+          <th>2025年<br>最低分</th>
+          <th>2025年<br>最低位次</th>
+          <th>2025年<br>批次</th>
+          <th>2024年<br>最低分</th>
+          <th>2024年<br>最低位次</th>
+          <th>2024年<br>批次</th>
+          <th>2023年<br>最低分</th>
+          <th>2023年<br>最低位次</th>
+          <th>2023年<br>批次</th>
+          <th>备注</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- ===== 公办部分 ===== -->
+        <tr class="pub-row rank-1 row-pub">
+          <td><span class="rank-badge">1</span></td>
+          <td class="school-cell">
+            <div class="school-name">四川师范大学</div>
+            <div class="school-sub">省属重点大学 · 成都主校区</div>
+            <span class="tag tag-key">省重点</span>
+            <span class="tag tag-pub">公办</span>
+          </td>
+          <td>🏠 成都</td>
+          <td><strong style="color:#2563eb;">公办</strong></td>
+          <td><span class="score" style="color:#2563eb;">553</span><br><span class="score-sub">遂宁:539</span></td>
+          <td><span class="rank-num">18,797</span><br><span class="score-sub">遂宁:25,206</span></td>
+          <td>本科批</td>
+          <td>537</td>
+          <td>16,236</td>
+          <td>本科一批</td>
+          <td>550</td>
+          <td>10,591</td>
+          <td>本科一批</td>
+          <td>省内师范最高</td>
+        </tr>
+        <tr class="pub-row rank-2 row-pub">
+          <td><span class="rank-badge">2</span></td>
+          <td class="school-cell">
+            <div class="school-name">成都师范学院</div>
+            <div class="school-sub">成都 · 公办师范本科</div>
+            <span class="tag tag-pub">公办</span>
+          </td>
+          <td>🏠 成都</td>
+          <td><strong style="color:#2563eb;">公办</strong></td>
+          <td><span class="score" style="color:#2563eb;">545</span></td>
+          <td><span class="rank-num">22,376</span></td>
+          <td>本科批</td>
+          <td>525</td>
+          <td>22,548</td>
+          <td>本科二批</td>
+          <td>524</td>
+          <td>22,544</td>
+          <td>本科二批</td>
+          <td>位次极稳</td>
+        </tr>
+        <tr class="pub-row rank-3 row-pub">
+          <td><span class="rank-badge">3</span></td>
+          <td class="school-cell">
+            <div class="school-name">内江师范学院</div>
+            <div class="school-sub">内江 · 公办师范本科</div>
+            <span class="tag tag-pub">公办</span>
+          </td>
+          <td>🏠 内江</td>
+          <td><strong style="color:#2563eb;">公办</strong></td>
+          <td><span class="score" style="color:#2563eb;">543</span></td>
+          <td><span class="rank-num">23,302</span></td>
+          <td>本科批</td>
+          <td>521</td>
+          <td>24,855</td>
+          <td>本科二批</td>
+          <td>522</td>
+          <td>23,718</td>
+          <td>本科二批</td>
+          <td></td>
+        </tr>
+        <tr class="pub-row others row-pub">
+          <td><span class="rank-badge">4</span></td>
+          <td class="school-cell">
+            <div class="school-name">绵阳师范学院</div>
+            <div class="school-sub">绵阳 · 公办师范本科</div>
+            <span class="tag tag-pub">公办</span>
+          </td>
+          <td>🏠 绵阳</td>
+          <td><strong style="color:#2563eb;">公办</strong></td>
+          <td><span class="score" style="color:#2563eb;">538</span></td>
+          <td><span class="rank-num">25,709</span></td>
+          <td>本科批</td>
+          <td>517</td>
+          <td>27,305</td>
+          <td>本科二批</td>
+          <td>518</td>
+          <td>26,146</td>
+          <td>本科二批</td>
+          <td>✅ 官方数据</td>
+        </tr>
+        <tr class="pub-row others row-pub">
+          <td><span class="rank-badge">5</span></td>
+          <td class="school-cell">
+            <div class="school-name">西华师范大学</div>
+            <div class="school-sub">南充 · 省属重点大学（原一本）</div>
+            <span class="tag tag-key">省重点</span>
+            <span class="tag tag-pub">公办</span>
+          </td>
+          <td>🏠 南充</td>
+          <td><strong style="color:#2563eb;">公办</strong></td>
+          <td><span class="score" style="color:#2563eb;">536</span></td>
+          <td><span class="rank-num">26,727</span></td>
+          <td>本科批</td>
+          <td>534</td>
+          <td>17,719</td>
+          <td>本科一批</td>
+          <td>539</td>
+          <td>14,959</td>
+          <td>本科一批</td>
+          <td>主力专业组563分</td>
+        </tr>
+        <tr class="pub-row others row-pub">
+          <td><span class="rank-badge">6</span></td>
+          <td class="school-cell">
+            <div class="school-name">乐山师范学院</div>
+            <div class="school-sub">乐山 · 公办师范本科</div>
+            <span class="tag tag-pub">公办</span>
+          </td>
+          <td>🏠 乐山</td>
+          <td><strong style="color:#2563eb;">公办</strong></td>
+          <td><span class="score" style="color:#2563eb;">533</span></td>
+          <td><span class="rank-num">28,339</span></td>
+          <td>本科批</td>
+          <td>516</td>
+          <td>27,969</td>
+          <td>本科二批</td>
+          <td>516</td>
+          <td>27,412</td>
+          <td>本科二批</td>
+          <td></td>
+        </tr>
+        <tr class="pub-row others row-pub">
+          <td><span class="rank-badge">7</span></td>
+          <td class="school-cell">
+            <div class="school-name">阿坝师范学院</div>
+            <div class="school-sub">汶川 · 公办师范本科（民族地区）</div>
+            <span class="tag tag-pub">公办</span>
+          </td>
+          <td>🏠 阿坝州汶川</td>
+          <td><strong style="color:#2563eb;">公办</strong></td>
+          <td><span class="score" style="color:#2563eb;">524</span></td>
+          <td><span class="rank-num">33,264</span></td>
+          <td>本科批</td>
+          <td>510</td>
+          <td>32,170</td>
+          <td>本科二批</td>
+          <td>508</td>
+          <td>33,026</td>
+          <td>本科二批</td>
+          <td>公办最低门槛</td>
+        </tr>
+
+        <!-- ===== 分隔行 ===== -->
+        <tr class="sep-row">
+          <td colspan="14">⬇️ 以下为省外民办师范类院校（独立学院）在四川招生 — 学费约2～5万/年 ⬇️</td>
+        </tr>
+
+        <!-- ===== 民办部分 ===== -->
+        <tr class="pri-row others row-pri">
+          <td><span class="rank-badge">8</span></td>
+          <td class="school-cell">
+            <div class="school-name">衡阳师范学院南岳学院</div>
+            <div class="school-sub">独立学院 · 母体：衡阳师范学院（湖南公办）</div>
+            <span class="tag tag-pri">民办</span>
+            <span class="tag tag-province">湖南·衡阳</span>
+          </td>
+          <td>🏫 湖南衡阳</td>
+          <td><strong style="color:#dc2626;">民办</strong></td>
+          <td><span class="score" style="color:#dc2626;">527</span><br><span class="score-sub">102组:521</span></td>
+          <td><span class="rank-num">31,573</span></td>
+          <td>本科批</td>
+          <td>501</td>
+          <td>38,837</td>
+          <td>本科二批</td>
+          <td>503</td>
+          <td>36,796</td>
+          <td>本科二批</td>
+          <td>民办中最高</td>
+        </tr>
+        <tr class="pri-row others row-pri">
+          <td><span class="rank-badge">9</span></td>
+          <td class="school-cell">
+            <div class="school-name">辽宁师范大学海华学院</div>
+            <div class="school-sub">独立学院 · 母体：辽宁师范大学（辽宁公办）</div>
+            <span class="tag tag-pri">民办</span>
+            <span class="tag tag-province">辽宁·大连</span>
+          </td>
+          <td>🏫 辽宁大连</td>
+          <td><strong style="color:#dc2626;">民办</strong></td>
+          <td><span class="score" style="color:#dc2626;">505</span><br><span class="score-sub">101组:469</span></td>
+          <td><span class="rank-num">44,731</span></td>
+          <td>本科批</td>
+          <td>472</td>
+          <td>63,681</td>
+          <td>本科二批</td>
+          <td>472</td>
+          <td>64,186</td>
+          <td>本科二批</td>
+          <td>分数稳定</td>
+        </tr>
+        <tr class="pri-row others row-pri">
+          <td><span class="rank-badge">10</span></td>
+          <td class="school-cell">
+            <div class="school-name">南京师范大学泰州学院</div>
+            <div class="school-sub">独立学院 · 母体：南京师范大学（211·江苏公办）</div>
+            <span class="tag tag-pri">民办</span>
+            <span class="tag tag-province">江苏·泰州</span>
+          </td>
+          <td>🏫 江苏泰州</td>
+          <td><strong style="color:#dc2626;">民办</strong></td>
+          <td><span class="score" style="color:#dc2626;">500</span></td>
+          <td><span class="rank-num">47,906</span></td>
+          <td>本科批</td>
+          <td>457</td>
+          <td>76,813</td>
+          <td>本科二批</td>
+          <td>499</td>
+          <td>40,092</td>
+          <td>本科二批</td>
+          <td>2024分数异常低</td>
+        </tr>
+        <tr class="pri-row others row-pri">
+          <td><span class="rank-badge">11</span></td>
+          <td class="school-cell">
+            <div class="school-name">吉林师范大学博达学院</div>
+            <div class="school-sub">独立学院 · 母体：吉林师范大学（吉林公办）</div>
+            <span class="tag tag-pri">民办</span>
+            <span class="tag tag-province">吉林·四平</span>
+          </td>
+          <td>🏫 吉林四平</td>
+          <td><strong style="color:#dc2626;">民办</strong></td>
+          <td><span class="score" style="color:#dc2626;">496</span><br><span class="score-sub">101组:474/102组:473</span></td>
+          <td><span class="rank-num">50,651</span></td>
+          <td>本科批</td>
+          <td>462</td>
+          <td>72,470</td>
+          <td>本科二批</td>
+          <td>476</td>
+          <td>60,402</td>
+          <td>本科二批</td>
+          <td>专业组多</td>
+        </tr>
+        <tr class="pri-row others row-pri">
+          <td><span class="rank-badge">12</span></td>
+          <td class="school-cell">
+            <div class="school-name">赣南师范大学科技学院</div>
+            <div class="school-sub">独立学院 · 母体：赣南师范大学（江西公办）</div>
+            <span class="tag tag-pri">民办</span>
+            <span class="tag tag-province">江西·赣州</span>
+          </td>
+          <td>🏫 江西赣州</td>
+          <td><strong style="color:#dc2626;">民办</strong></td>
+          <td><span class="score" style="color:#dc2626;">485</span><br><span class="score-sub">（物理类489）</span></td>
+          <td><span class="rank-num">—</span></td>
+          <td>本科批</td>
+          <td>—</td>
+          <td>—</td>
+          <td>本科二批</td>
+          <td>—</td>
+          <td>—</td>
+          <td>本科二批</td>
+          <td>数据较少</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== 公办 vs 民办 对比 ==================== -->
+  <div class="section-title section-bar-pub">
+    ⚖️ 公办 vs 民办 关键对比
+    <span class="section-badge sb-pub">一目了然</span>
+  </div>
+
+  <div class="table-wrap">
+    <table style="min-width:auto;">
+      <thead>
+        <tr><th style="text-align:left;">对比维度</th><th class="pub-header">🏛️ 四川省内公办（7所）</th><th class="pri-header">🏫 省外民办/独立学院（5所）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td style="text-align:left;"><strong>2025最低分</strong></td><td style="color:#2563eb;font-weight:700;">524～553分</td><td style="color:#dc2626;font-weight:700;">469～527分</td></tr>
+        <tr><td style="text-align:left;"><strong>2025最低位次</strong></td><td>18,797～33,264名</td><td>31,573～69,262名</td></tr>
+        <tr><td style="text-align:left;"><strong>年均学费</strong></td><td style="color:#16a34a;">约4,000～6,000元</td><td style="color:#dc2626;">约20,000～50,000元</td></tr>
+        <tr><td style="text-align:left;"><strong>办学地点</strong></td><td>四川省内各市州</td><td>湖南、江苏、辽宁、吉林、江西</td></tr>
+        <tr><td style="text-align:left;"><strong>学历认可度</strong></td><td>公办本科，社会认可度高</td><td>民办本科，部分用人单位有歧视</td></tr>
+        <tr><td style="text-align:left;"><strong>师资力量</strong></td><td>省属编制教师为主</td><td>自聘教师为主，可共享部分母体资源</td></tr>
+        <tr><td style="text-align:left;"><strong>学位证书</strong></td><td>本校独立授予</td><td>独立学院名义授予（改革过渡中）</td></tr>
+        <tr><td style="text-align:left;"><strong>考研优势</strong></td><td>有硕士点（川师大/西华师大）</td><td>无硕士点，考研竞争更激烈</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== 各民办院校详细数据 ==================== -->
+  <div class="section-title section-bar-pri">
+    🏫 省外民办师范院校（独立学院）详细数据
+    <span class="section-badge sb-pri">在四川招生</span>
+  </div>
+
+  <!-- 衡阳师范学院南岳学院 -->
+  <div class="detail-card" style="border-left:4px solid #dc2626;">
+    <h3>衡阳师范学院南岳学院 <span class="tag tag-pri">民办</span> <span class="tag tag-province">湖南衡阳</span></h3>
+    <div class="meta">
+      📌 母体：衡阳师范学院（湖南公办） ｜ 性质：独立学院 ｜ 在川招生师范专业：汉语言文学（师范）、地理科学（师范）等
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>527</strong>（101组）/ <strong>521</strong>（102组）</td><td>31,573 / 35,017</td><td>467</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td><strong>501</strong></td><td>38,837</td><td>457</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td><strong>503</strong></td><td>36,796</td><td>458</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-secondary);">📊 民办师范中分数最高，2025年527分已接近阿坝师范学院（公办524分）。</p>
+  </div>
+
+  <!-- 辽宁师范大学海华学院 -->
+  <div class="detail-card" style="border-left:4px solid #dc2626;">
+    <h3>辽宁师范大学海华学院 <span class="tag tag-pri">民办</span> <span class="tag tag-province">辽宁大连</span></h3>
+    <div class="meta">
+      📌 母体：辽宁师范大学（辽宁公办） ｜ 性质：独立学院 ｜ 在川招生：法学、汉语言文学、会计学、思想政治教育、学前教育、英语等
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>505</strong>（102组）/ <strong>469</strong>（101组）</td><td>44,731 / 69,262</td><td>467</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td><strong>472</strong></td><td>63,681</td><td>457</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td><strong>472</strong></td><td>64,186</td><td>458</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-secondary);">📊 近两年分数异常稳定（472分），2025年分专业组后高低差异大（469～505）。</p>
+  </div>
+
+  <!-- 南京师范大学泰州学院 -->
+  <div class="detail-card" style="border-left:4px solid #dc2626;">
+    <h3>南京师范大学泰州学院 <span class="tag tag-pri">民办</span> <span class="tag tag-province">江苏泰州</span></h3>
+    <div class="meta">
+      📌 母体：南京师范大学（211高校·江苏公办） ｜ 性质：独立学院 ｜ 母体为211，品牌有一定溢价
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>500</strong></td><td>47,906</td><td>467</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td><strong>457</strong></td><td>76,813</td><td>457</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td><strong>499</strong></td><td>40,092</td><td>458</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85rem;color:#d97706;">⚠️ 2024年分数线异常大跌（499→457分），2025年回升至500分，填报需注意波动。</p>
+  </div>
+
+  <!-- 吉林师范大学博达学院 -->
+  <div class="detail-card" style="border-left:4px solid #dc2626;">
+    <h3>吉林师范大学博达学院 <span class="tag tag-pri">民办</span> <span class="tag tag-province">吉林四平</span></h3>
+    <div class="meta">
+      📌 母体：吉林师范大学（吉林公办） ｜ 性质：独立学院 ｜ 在川招生专业多：汉语言文学、英语、小学教育、学前教育、地理科学等
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>496</strong>（103组）/ 474（101组）/ 473（102组）</td><td>50,651 / 65,764 / 66,430</td><td>467</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td><strong>462</strong></td><td>72,470</td><td>457</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td><strong>476</strong></td><td>60,402</td><td>458</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85rem;color:var(--text-secondary);">📊 专业组最多，分数跨度大（473～496），低分专业组接近本科线。</p>
+  </div>
+
+  <!-- 赣南师范大学科技学院 -->
+  <div class="detail-card" style="border-left:4px solid #dc2626;">
+    <h3>赣南师范大学科技学院 <span class="tag tag-pri">民办</span> <span class="tag tag-province">江西赣州</span></h3>
+    <div class="meta">
+      📌 母体：赣南师范大学（江西公办） ｜ 性质：独立学院 ｜ 在川招生规模较小，历史数据有限
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>~485</strong>（物理类489，历史类推算）</td><td>—</td><td>467</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td>数据待验证</td><td>—</td><td>457</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td>数据待验证</td><td>—</td><td>458</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.85rem;color:#d97706;">⚠️ 赣南师大科技学院在川历史类数据较少，分数估算供参考。建议直接查询四川省教育考试院官网确认。</p>
+  </div>
+
+  <!-- ==================== 报考决策参考 ==================== -->
+  <div class="section-title section-bar-pub">
+    🎯 文科考生报考决策参考
+    <span class="section-badge sb-pub">按位次选校</span>
+  </div>
+
+  <div class="table-wrap">
+    <table style="min-width:auto;">
+      <thead>
+        <tr class="pub-header"><th>你的位次区间</th><th>🎯 推荐院校</th><th>办学性质</th><th>学费参考</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>前10,000名</strong></td>
+          <td>四川师范大学（成都校区·热门专业组）</td>
+          <td style="color:#2563eb;">公办</td>
+          <td>~5,000元/年</td>
+        </tr>
+        <tr>
+          <td><strong>10,000～19,000名</strong></td>
+          <td>四川师范大学（成都校区·普通专业组）</td>
+          <td style="color:#2563eb;">公办</td>
+          <td>~5,000元/年</td>
+        </tr>
+        <tr>
+          <td><strong>19,000～22,500名</strong></td>
+          <td>四川师范大学（遂宁校区） / 成都师范学院</td>
+          <td style="color:#2563eb;">公办</td>
+          <td>~5,000元/年</td>
+        </tr>
+        <tr>
+          <td><strong>22,500～25,000名</strong></td>
+          <td>内江师范学院 / 绵阳师范学院</td>
+          <td style="color:#2563eb;">公办</td>
+          <td>~5,000元/年</td>
+        </tr>
+        <tr>
+          <td><strong>25,000～28,000名</strong></td>
+          <td>西华师范大学 / 乐山师范学院</td>
+          <td style="color:#2563eb;">公办</td>
+          <td>~5,000元/年</td>
+        </tr>
+        <tr>
+          <td><strong>28,000～34,000名</strong></td>
+          <td>阿坝师范学院（公办保底）</td>
+          <td style="color:#2563eb;">公办</td>
+          <td>~5,000元/年</td>
+        </tr>
+        <tr style="background:#fef2f2;">
+          <td><strong>34,000～50,000名</strong></td>
+          <td>衡阳师范南岳学院 / 辽宁师范海华学院 / 南京师范泰州学院</td>
+          <td style="color:#dc2626;">民办</td>
+          <td>2～5万元/年</td>
+        </tr>
+        <tr style="background:#fef2f2;">
+          <td><strong>50,000～70,000名</strong></td>
+          <td>吉林师范博达学院 / 辽宁师范海华学院（低分专业组）</td>
+          <td style="color:#dc2626;">民办</td>
+          <td>2～5万元/年</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 关键发现 -->
+  <div class="section-title">💡 关键发现</div>
+  <div class="detail-card">
+    <ol style="padding-left:20px; line-height:2.2; font-size:0.93rem;">
+      <li><strong>四川无民办师范本科：</strong>四川本省没有独立设置的民办师范大学/师范学院。想读师范但分数不够公办的同学，要么选省外独立学院（学费高），要么选川内综合类民办院校的师范专业。</li>
+      <li><strong>公办最低524分（阿坝师范）：</strong>这是四川省内公办师范本科的最低门槛。位次约3.3万名以内的文科生都有机会上公办师范。</li>
+      <li><strong>民办最高527分（衡阳南岳学院）：</strong>最好的民办师范独立学院，分数已经与阿坝师范学院（公办524分）相当甚至略高。</li>
+      <li><strong>民办最低469分：</strong>辽宁师范大学海华学院101组（历史类）469分即可录取，仅超本科线2分，是师范类本科的"最低上车门槛"。</li>
+      <li><strong>学费差距巨大：</strong>公办约4千～6千/年 vs 民办约2万～5万/年。4年学费相差8～20万元。</li>
+      <li><strong>独立学院正处改革窗口期：</strong>教育部要求独立学院2025年前完成转设，部分院校可能转为民办普通本科或终止办学，报考前务必查询最新转设状态。</li>
+      <li><strong>位次比分数重要：</strong>2025年新高考分数体系变化大，建议以位次为主要参考。公办师范的位次门槛三年基本稳定在3.3万名以内。</li>
+    </ol>
+  </div>
+
+  <!-- 数据来源 -->
+  <div class="section-title">🔗 数据来源</div>
+  <div class="detail-card">
+    <table style="min-width:auto;">
+      <thead><tr><th>学校</th><th>官方招生网站</th><th>2025数据来源</th><th>2023-2024数据来源</th></tr></thead>
+      <tbody>
+        <tr><td><strong>四川师范大学</strong></td><td><a href="https://zs.sicnu.edu.cn" target="_blank">zs.sicnu.edu.cn</a></td><td>官网+掌上高考交叉验证</td><td>daxuejiayou.com / gk100.com</td></tr>
+        <tr><td><strong>成都师范学院</strong></td><td><a href="https://www.cdnu.edu.cn/zjc/" target="_blank">cdnu.edu.cn/zjc</a></td><td>官网+掌上高考交叉验证</td><td>dakao100.com</td></tr>
+        <tr><td><strong>内江师范学院</strong></td><td>zs.neijiang.edu.cn</td><td>掌上高考/gk100.com交叉验证</td><td>daxuejiayou.com</td></tr>
+        <tr><td><strong>绵阳师范学院</strong></td><td><a href="https://zs.mtc.edu.cn" target="_blank">zs.mtc.edu.cn</a></td><td><span class="source-badge source-official">✅ 官方原始数据页完整提取</span></td><td>daxuejiayou.com / dxsbb.com</td></tr>
+        <tr><td><strong>西华师范大学</strong></td><td><a href="https://zs.cwnu.edu.cn" target="_blank">zs.cwnu.edu.cn</a></td><td>官网+掌上高考交叉验证</td><td>dxsbb.com / gk100.com</td></tr>
+        <tr><td><strong>乐山师范学院</strong></td><td><a href="http://zs.lsnu.edu.cn/lnlq.htm" target="_blank">zs.lsnu.edu.cn/lnlq.htm</a></td><td>二级学院官方页面+高考平台交叉验证</td><td>daxuejiayou.com</td></tr>
+        <tr><td><strong>阿坝师范学院</strong></td><td>zs.abtu.edu.cn</td><td>掌上高考/gk100.com交叉验证</td><td>daxuejiayou.com / dakao100.com</td></tr>
+        <tr style="background:#fef2f2;"><td colspan="4"><strong>省外民办（独立学院）：</strong></td></tr>
+        <tr><td><strong>衡阳师范南岳学院</strong></td><td>—</td><td><a href="https://www.gk100.com/read_1864037433981.htm" target="_blank">gk100.com 民办师范汇总</a></td><td>daxuejiayou.com</td></tr>
+        <tr><td><strong>辽宁师范海华学院</strong></td><td>—</td><td>gk100.com 民办师范汇总</td><td>daxuejiayou.com / dakao100.com</td></tr>
+        <tr><td><strong>南京师范泰州学院</strong></td><td>—</td><td>gk100.com 民办师范汇总</td><td>daxuejiayou.com / dakao100.com</td></tr>
+        <tr><td><strong>吉林师范博达学院</strong></td><td>—</td><td>gk100.com 民办师范汇总</td><td>daxuejiayou.com / dakao100.com</td></tr>
+        <tr><td><strong>赣南师大科技学院</strong></td><td>—</td><td>gk100.com 民办师范汇总</td><td>数据较少</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;font-size:0.85rem;color:var(--text-secondary);">
+      ⚠️ 最终数据请以<a href="https://www.sceea.cn" target="_blank">四川省教育考试院官网</a>及各院校招生网公布为准。
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <p>📅 数据整理日期：2026年6月23日 ｜ 数据年份：2023年、2024年、2025年</p>
+  <p>四川省教育考试院：<a href="https://www.sceea.cn" target="_blank">sceea.cn</a> ｜ 掌上高考：<a href="https://www.gaokao.cn" target="_blank">gaokao.cn</a></p>
+  <p style="margin-top:8px; opacity:0.7;">
+    ⚠️ 免责声明：以上数据综合整理自各高校官方招生网站及权威高考信息平台。2025年四川实行新高考改革，历年数据仅供参考。
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>四川省内师范大学 文科 近三年录取分数线排名</title>
+<style>
+  :root {
+    --primary: #1a56db;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --text-secondary: #64748b;
+    --border: #e2e8f0;
+    --accent-hist: #db2777;
+    --gold: #f59e0b;
+    --silver: #94a3b8;
+    --bronze: #d97706;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .container { max-width: 1300px; margin: 0 auto; padding: 20px; }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #831843 0%, #db2777 50%, #be185d 100%);
+    color: #fff;
+    padding: 48px 20px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  header h1 { font-size: 2rem; margin-bottom: 8px; }
+  header p { opacity: 0.9; font-size: 1.05rem; }
+  header .date-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 16px;
+    margin-top: 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Summary cards */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .summary-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .summary-card .label { font-size: 0.85rem; color: var(--text-secondary); }
+  .summary-card .value { font-size: 1.8rem; font-weight: 700; color: var(--accent-hist); margin: 4px 0; }
+  .summary-card .note { font-size: 0.8rem; color: var(--text-secondary); }
+
+  /* Section title */
+  .section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 32px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--accent-hist);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .badge {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: #fce7f3;
+    color: #9d174d;
+  }
+
+  /* Main ranking table */
+  .table-wrap {
+    overflow-x: auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    margin-bottom: 32px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    min-width: 1050px;
+  }
+  th {
+    background: #fdf2f8;
+    text-align: center;
+    padding: 12px 10px;
+    font-weight: 700;
+    color: #831843;
+    font-size: 0.82rem;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--border);
+  }
+  td {
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    vertical-align: middle;
+  }
+  tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #fdf2f8; }
+
+  .school-cell { text-align: left; min-width: 180px; }
+  .school-name { font-weight: 700; font-size: 1rem; color: var(--text); }
+  .school-location { font-size: 0.78rem; color: var(--text-secondary); }
+
+  .rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .rank-1 .rank-badge { background: #fef3c7; color: #92400e; }
+  .rank-2 .rank-badge { background: #e5e7eb; color: #374151; }
+  .rank-3 .rank-badge { background: #fef3c7; color: #92400e; }
+  .others .rank-badge { background: #f1f5f9; color: #64748b; }
+
+  .score-high { font-weight: 700; font-size: 1.1rem; color: #db2777; }
+  .score-mid { font-weight: 600; color: var(--text); }
+  .score-sub { font-size: 0.78rem; color: #d97706; display: block; }
+
+  .rank-num { color: var(--text-secondary); font-size: 0.82rem; }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 1px 2px;
+  }
+  .tag-key { background: #dcfce7; color: #166534; }
+  .tag-public { background: #dbeafe; color: #1e40af; }
+  .tag-campus { background: #fef3c7; color: #92400e; }
+  .tag-batch1 { background: #ede9fe; color: #5b21b6; }
+
+  .public-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #dbeafe;
+    color: #1e40af;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+  }
+
+  .trend-up { color: #16a34a; }
+  .trend-down { color: #dc2626; }
+  .trend-flat { color: #64748b; }
+
+  .highlight-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 0.9rem;
+  }
+  .highlight-box strong { color: #92400e; }
+
+  /* Detail cards */
+  .detail-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .detail-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+  }
+  .detail-card .meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+  }
+  .detail-card h4 {
+    font-size: 0.9rem;
+    color: #831843;
+    margin: 16px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .source-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.78rem;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .source-official { background: #dcfce7; color: #166534; }
+  .source-third { background: #fef3c7; color: #92400e; }
+
+  footer {
+    text-align: center;
+    padding: 32px 20px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  footer a { color: var(--primary); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  .note-callout {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 14px 18px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    header h1 { font-size: 1.4rem; }
+    .container { padding: 10px; }
+    td, th { padding: 6px 8px; font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 四川省内师范大学 · 文科 · 近三年录取分数线排名</h1>
+  <p>7所本科师范院校 ｜ 2023–2025年 ｜ 文科/历史类 ｜ 四川省内招生</p>
+  <div class="date-badge">📅 整理日期：2026年6月23日 ｜ 2025年为新高考"3+1+2"模式（历史类）｜ 2023-2024年为传统高考（文科）</div>
+</header>
+
+<div style="background:#fff;border-bottom:1px solid #e2e8f0;padding:10px 0;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+  <span style="font-weight:600;color:#475569;">📍 当前页面：</span>
+  <span style="background:#db2777;color:#fff;padding:5px 14px;border-radius:14px;font-size:0.85rem;font-weight:600;">🏛️ 四川省内公办（7所）</span>
+  <a href="index.html" style="display:inline-block;margin-left:12px;padding:5px 14px;border-radius:14px;font-size:0.85rem;font-weight:600;background:#ede9fe;color:#5b21b6;text-decoration:none;">📊 查看完整排名（含省外民办）→</a>
+</div>
+
+<div class="container">
+
+  <!-- 概览卡片 -->
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="label">🏫 本科师范大学</div>
+      <div class="value">7 所</div>
+      <div class="note">全部为公办院校</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">📈 2025年最高分</div>
+      <div class="value">553</div>
+      <div class="note">四川师范大学（成都校区）</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">📈 2024年最高分</div>
+      <div class="value">537</div>
+      <div class="note">四川师范大学（本科一批）</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">📈 2023年最高分</div>
+      <div class="value">550</div>
+      <div class="note">四川师范大学（本科一批）</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">🏛️ 办学性质</div>
+      <div class="value" style="font-size:1.3rem;">全部公办</div>
+      <div class="note">无民办师范本科院校</div>
+    </div>
+  </div>
+
+  <!-- ==================== 重要提示 ==================== -->
+  <div class="highlight-box">
+    <strong>⚠️ 关于2025年分数"跳涨"的说明：</strong><br>
+    2025年四川省首次实行<strong>新高考"3+1+2"模式</strong>，取消文理分科，改为"历史类/物理类"。
+    同时合并本科一批、二批为统一的<strong>"本科批"</strong>。
+    由于赋分制度变化和批次合并，<strong>2025年历史类分数线普遍高于2023-2024年文科分数线</strong>——
+    这不代表学校突然变难考，而是计分体系变化导致的。建议<strong>以位次为主要参考</strong>，分数仅作辅助。
+  </div>
+
+  <!-- ==================== 主排名表 ==================== -->
+  <div class="section-title">
+    📚 文科/历史类 · 近三年录取分数线排名
+    <span class="badge">按2025年从高到低排序</span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:45px;">排名</th>
+          <th style="text-align:left;min-width:170px;">学校名称</th>
+          <th style="width:60px;">办学<br>性质</th>
+          <th>2025年<br>最低分</th>
+          <th>2025年<br>最低位次</th>
+          <th>2025年<br>批次</th>
+          <th>2024年<br>最低分</th>
+          <th>2024年<br>最低位次</th>
+          <th>2024年<br>批次</th>
+          <th>2023年<br>最低分</th>
+          <th>2023年<br>最低位次</th>
+          <th>2023年<br>批次</th>
+          <th>数据来源</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 1. 四川师范大学 -->
+        <tr class="rank-1">
+          <td><span class="rank-badge">1</span></td>
+          <td class="school-cell">
+            <div class="school-name">四川师范大学</div>
+            <div class="school-location">📍 成都 · 省属重点大学</div>
+            <span class="tag tag-key">省属重点</span>
+            <span class="tag tag-campus">有遂宁校区</span>
+            <span class="tag tag-batch1">原一本</span>
+          </td>
+          <td><span class="public-badge">公办</span></td>
+          <td><span class="score-high">553</span><br><span class="score-sub">遂宁: 539</span></td>
+          <td><span class="rank-num">18,797</span><br><span class="score-sub">遂宁: 25,206</span></td>
+          <td>本科批B段</td>
+          <td><span class="score-mid">537</span><br><span class="score-sub">遂宁: 530</span></td>
+          <td><span class="rank-num">16,236</span><br><span class="score-sub">遂宁: 19,830</span></td>
+          <td>本科一批</td>
+          <td><span class="score-mid">550</span><br><span class="score-sub">遂宁: 527</span></td>
+          <td><span class="rank-num">10,591</span><br><span class="score-sub">遂宁: 20,831</span></td>
+          <td>本科一批</td>
+          <td><span class="source-badge source-third">招生网/高考平台</span></td>
+        </tr>
+
+        <!-- 2. 成都师范学院 -->
+        <tr class="rank-2">
+          <td><span class="rank-badge">2</span></td>
+          <td class="school-cell">
+            <div class="school-name">成都师范学院</div>
+            <div class="school-location">📍 成都 · 公办本科</div>
+          </td>
+          <td><span class="public-badge">公办</span></td>
+          <td><span class="score-high">545</span></td>
+          <td><span class="rank-num">22,376</span></td>
+          <td>本科批B段</td>
+          <td><span class="score-mid">525</span></td>
+          <td><span class="rank-num">22,548</span></td>
+          <td>本科二批</td>
+          <td><span class="score-mid">524</span></td>
+          <td><span class="rank-num">22,544</span></td>
+          <td>本科二批</td>
+          <td><span class="source-badge source-third">招生就业处/高考平台</span></td>
+        </tr>
+
+        <!-- 3. 内江师范学院 -->
+        <tr class="rank-3">
+          <td><span class="rank-badge">3</span></td>
+          <td class="school-cell">
+            <div class="school-name">内江师范学院</div>
+            <div class="school-location">📍 内江 · 公办本科</div>
+          </td>
+          <td><span class="public-badge">公办</span></td>
+          <td><span class="score-high">543</span></td>
+          <td><span class="rank-num">23,302</span></td>
+          <td>本科批B段</td>
+          <td><span class="score-mid">521</span></td>
+          <td><span class="rank-num">24,855</span></td>
+          <td>本科二批</td>
+          <td><span class="score-mid">522</span></td>
+          <td><span class="rank-num">23,718</span></td>
+          <td>本科二批</td>
+          <td><span class="source-badge source-third">高考平台</span></td>
+        </tr>
+
+        <!-- 4. 绵阳师范学院 -->
+        <tr class="others">
+          <td><span class="rank-badge">4</span></td>
+          <td class="school-cell">
+            <div class="school-name">绵阳师范学院</div>
+            <div class="school-location">📍 绵阳 · 公办本科</div>
+            <span class="tag tag-key">官方数据</span>
+          </td>
+          <td><span class="public-badge">公办</span></td>
+          <td><span class="score-high">538</span></td>
+          <td><span class="rank-num">25,709</span></td>
+          <td>本科批B段</td>
+          <td><span class="score-mid">517</span></td>
+          <td><span class="rank-num">27,305</span></td>
+          <td>本科二批</td>
+          <td><span class="score-mid">518</span></td>
+          <td><span class="rank-num">26,146</span></td>
+          <td>本科二批</td>
+          <td><span class="source-badge source-official">✅ 招生网官方</span></td>
+        </tr>
+
+        <!-- 5. 西华师范大学 -->
+        <tr class="others">
+          <td><span class="rank-badge">5</span></td>
+          <td class="school-cell">
+            <div class="school-name">西华师范大学</div>
+            <div class="school-location">📍 南充 · 省属重点大学</div>
+            <span class="tag tag-key">省属重点</span>
+            <span class="tag tag-batch1">原一本</span>
+          </td>
+          <td><span class="public-badge">公办</span></td>
+          <td><span class="score-high">536</span></td>
+          <td><span class="rank-num">26,727</span></td>
+          <td>本科批B段</td>
+          <td><span class="score-mid">534</span></td>
+          <td><span class="rank-num">17,719</span></td>
+          <td>本科一批</td>
+          <td><span class="score-mid">539</span></td>
+          <td><span class="rank-num">14,959</span></td>
+          <td>本科一批</td>
+          <td><span class="source-badge source-third">招生网/高考平台</span></td>
+        </tr>
+
+        <!-- 6. 乐山师范学院 -->
+        <tr class="others">
+          <td><span class="rank-badge">6</span></td>
+          <td class="school-cell">
+            <div class="school-name">乐山师范学院</div>
+            <div class="school-location">📍 乐山 · 公办本科</div>
+          </td>
+          <td><span class="public-badge">公办</span></td>
+          <td><span class="score-high">533</span></td>
+          <td><span class="rank-num">28,339</span></td>
+          <td>本科批B段</td>
+          <td><span class="score-mid">516</span></td>
+          <td><span class="rank-num">27,969</span></td>
+          <td>本科二批</td>
+          <td><span class="score-mid">516</span></td>
+          <td><span class="rank-num">27,412</span></td>
+          <td>本科二批</td>
+          <td><span class="source-badge source-third">官网/高考平台</span></td>
+        </tr>
+
+        <!-- 7. 阿坝师范学院 -->
+        <tr class="others">
+          <td><span class="rank-badge">7</span></td>
+          <td class="school-cell">
+            <div class="school-name">阿坝师范学院</div>
+            <div class="school-location">📍 阿坝州汶川 · 公办本科</div>
+          </td>
+          <td><span class="public-badge">公办</span></td>
+          <td><span class="score-high">524</span></td>
+          <td><span class="rank-num">33,264</span></td>
+          <td>本科批B段</td>
+          <td><span class="score-mid">510</span></td>
+          <td><span class="rank-num">32,170</span></td>
+          <td>本科二批</td>
+          <td><span class="score-mid">508</span></td>
+          <td><span class="rank-num">33,026</span></td>
+          <td>本科二批</td>
+          <td><span class="source-badge source-third">高考平台</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== 位次排名表（更科学） ==================== -->
+  <div class="section-title">
+    📊 以位次为基准的排名（更科学）
+    <span class="badge">2025年位次从高到低</span>
+  </div>
+
+  <div class="highlight-box">
+    <strong>💡 为什么看位次比看分数更准？</strong><br>
+    每年高考试题难度不同，分数线会上下浮动（如2025年新高考赋分后整体偏高）。
+    但<strong>高校录取位次相对稳定</strong>，更能反映真实的竞争格局。以下用2025年位次排序，并对比近三年位次变化。
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>排名</th>
+          <th style="text-align:left;">学校名称</th>
+          <th>办学性质</th>
+          <th>2025年位次</th>
+          <th>2024年位次</th>
+          <th>2023年位次</th>
+          <th>位次趋势</th>
+          <th>近三年位次评价</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="rank-1">
+          <td><span class="rank-badge">1</span></td>
+          <td class="school-cell"><div class="school-name">四川师范大学</div><div class="school-location">成都校区（普通类最低）</div></td>
+          <td><span class="public-badge">公办</span></td>
+          <td><strong>18,797</strong></td>
+          <td>16,236</td>
+          <td>10,591</td>
+          <td class="trend-down">📉 逐年下降</td>
+          <td>四川省内师范绝对第一，但竞争逐年缓解</td>
+        </tr>
+        <tr class="rank-2">
+          <td><span class="rank-badge">2</span></td>
+          <td class="school-cell"><div class="school-name">成都师范学院</div><div class="school-location">成都</div></td>
+          <td><span class="public-badge">公办</span></td>
+          <td><strong>22,376</strong></td>
+          <td>22,548</td>
+          <td>22,544</td>
+          <td class="trend-flat">➡️ 极其稳定</td>
+          <td>位次近三年几乎不变，成都区位加持</td>
+        </tr>
+        <tr class="rank-3">
+          <td><span class="rank-badge">3</span></td>
+          <td class="school-cell"><div class="school-name">内江师范学院</div><div class="school-location">内江</div></td>
+          <td><span class="public-badge">公办</span></td>
+          <td><strong>23,302</strong></td>
+          <td>24,855</td>
+          <td>23,718</td>
+          <td class="trend-flat">➡️ 稳定</td>
+          <td>波动不大，2.3～2.5万位次区间</td>
+        </tr>
+        <tr class="others">
+          <td><span class="rank-badge">4</span></td>
+          <td class="school-cell"><div class="school-name">绵阳师范学院</div><div class="school-location">绵阳</div></td>
+          <td><span class="public-badge">公办</span></td>
+          <td><strong>25,709</strong></td>
+          <td>27,305</td>
+          <td>26,146</td>
+          <td class="trend-flat">➡️ 稳定</td>
+          <td>2.5～2.7万区间，小幅波动</td>
+        </tr>
+        <tr class="others">
+          <td><span class="rank-badge">5</span></td>
+          <td class="school-cell"><div class="school-name">西华师范大学</div><div class="school-location">南充 · 省属重点</div></td>
+          <td><span class="public-badge">公办</span></td>
+          <td><strong>26,727</strong></td>
+          <td>17,719</td>
+          <td>14,959</td>
+          <td class="trend-down">📉 明显下降</td>
+          <td>原一本，位次大幅后移，2025年变为本科批</td>
+        </tr>
+        <tr class="others">
+          <td><span class="rank-badge">6</span></td>
+          <td class="school-cell"><div class="school-name">乐山师范学院</div><div class="school-location">乐山</div></td>
+          <td><span class="public-badge">公办</span></td>
+          <td><strong>28,339</strong></td>
+          <td>27,969</td>
+          <td>27,412</td>
+          <td class="trend-flat">➡️ 极其稳定</td>
+          <td>连续三年稳定在2.7～2.8万</td>
+        </tr>
+        <tr class="others">
+          <td><span class="rank-badge">7</span></td>
+          <td class="school-cell"><div class="school-name">阿坝师范学院</div><div class="school-location">阿坝州汶川</div></td>
+          <td><span class="public-badge">公办</span></td>
+          <td><strong>33,264</strong></td>
+          <td>32,170</td>
+          <td>33,026</td>
+          <td class="trend-flat">➡️ 极其稳定</td>
+          <td>连续三年稳定在3.2～3.3万</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ==================== 各校详细数据 ==================== -->
+  <div class="section-title">📋 各校详细录取数据及官方来源</div>
+
+  <!-- 1. 四川师范大学 -->
+  <div class="detail-card">
+    <h3>🥇 第1名：四川师范大学 — 近三年文科/历史类录取详情</h3>
+    <div class="meta">
+      📌 官方招生网：<a href="https://zs.sicnu.edu.cn" target="_blank">zs.sicnu.edu.cn</a> ｜
+      层次：省属重点大学 ｜ 所在地：成都（主校区）+ 遂宁（新校区）｜ 办学性质：<strong>公办</strong>
+    </div>
+
+    <h4>2025年 · 历史类 · 本科批B段（新高考）</h4>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>专业组</th><th>选科要求</th><th>最低分</th><th>最低位次</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>106</td><td>不限</td><td><strong>584</strong></td><td>8,073</td><td>最高分专业组</td></tr>
+          <tr><td>103</td><td>不限</td><td><strong>580</strong></td><td>9,150</td><td></td></tr>
+          <tr><td>102/109</td><td>不限/政治</td><td><strong>571</strong></td><td>11,819</td><td></td></tr>
+          <tr><td>101</td><td>不限</td><td><strong>569</strong></td><td>12,520</td><td>成都校区基准线</td></tr>
+          <tr><td>104</td><td>不限</td><td><strong>553</strong></td><td>18,797</td><td>⭐ 成都校区普通类最低</td></tr>
+          <tr style="background:#fffbeb;"><td>105</td><td>不限</td><td><strong style="color:#d97706;">539</strong></td><td>25,206</td><td>遂宁校区（同毕业证）</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>2024年 · 文科 · 本科一批/二批（旧高考）</h4>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>类型</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td>普通类</td><td>本科一批</td><td><strong>537</strong></td><td>16,236</td><td>529</td></tr>
+          <tr><td>定向（西藏）</td><td>本科一批</td><td>541</td><td>14,426</td><td>529</td></tr>
+          <tr><td>中外合作</td><td>本科一批</td><td>531</td><td>19,272</td><td>529</td></tr>
+          <tr style="background:#fffbeb;"><td>遂宁校区</td><td>本科一批</td><td style="color:#d97706;">530</td><td>19,830</td><td>529</td></tr>
+          <tr><td>艺术类</td><td>本科一批</td><td>529</td><td>20,373</td><td>529</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>2023年 · 文科 · 本科一批/二批（旧高考）</h4>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>类型</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td>普通类</td><td>本科一批</td><td><strong>550</strong></td><td>10,591</td><td>527</td></tr>
+          <tr><td>定向（西藏）</td><td>本科一批</td><td>541</td><td>14,063</td><td>527</td></tr>
+          <tr style="background:#fffbeb;"><td>遂宁校区</td><td>本科一批</td><td style="color:#d97706;">527</td><td>20,831</td><td>527</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 2. 成都师范学院 -->
+  <div class="detail-card">
+    <h3>🥈 第2名：成都师范学院 — 近三年文科/历史类录取详情</h3>
+    <div class="meta">
+      📌 官方招生就业处：<a href="https://www.cdnu.edu.cn/zjc/" target="_blank">cdnu.edu.cn/zjc</a> ｜
+      所在地：成都 ｜ 办学性质：<strong>公办</strong>
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>545</strong></td><td>22,376</td><td>467(历史类本科线)</td><td>专业组102（教育类/心理类）最低；专业组104（地理科学）最高564分</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td><strong>525</strong></td><td>22,548</td><td>457</td><td>普通类</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td><strong>524</strong></td><td>22,544</td><td>458</td><td>普通类</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:8px;font-size:0.9rem;">
+      <strong>📊 位次分析：</strong>成都师范学院是7所院校中<strong>位次最稳定的</strong>——2023年22,544名、2024年22,548名、2025年22,376名，三年波动不到200名。成都的地理位置是其最大优势。
+    </p>
+  </div>
+
+  <!-- 3. 内江师范学院 -->
+  <div class="detail-card">
+    <h3>🥉 第3名：内江师范学院 — 近三年文科/历史类录取详情</h3>
+    <div class="meta">
+      📌 官方招生网：zs.neijiang.edu.cn ｜
+      所在地：内江 ｜ 办学性质：<strong>公办</strong> ｜ 2025年在川招历史类约900人
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>543</strong></td><td>23,302</td><td>467</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td><strong>521</strong></td><td>24,855</td><td>457</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td><strong>522</strong></td><td>23,718</td><td>458</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:8px;font-size:0.9rem;">
+      <strong>📊 2025年各专业组：</strong>104组（思政）553分｜102组546分｜101组544分｜103组（地理）543分
+    </p>
+  </div>
+
+  <!-- 4. 绵阳师范学院 -->
+  <div class="detail-card">
+    <h3>第4名：绵阳师范学院 — 近三年文科/历史类录取详情 <span class="source-badge source-official">✅ 官方完整数据</span></h3>
+    <div class="meta">
+      📌 官方招生信息网：<a href="https://zs.mtc.edu.cn" target="_blank">zs.mtc.edu.cn</a> ｜
+      官方原始数据页：<a href="https://zs.mtc.edu.cn/index.php?sys=home&module=article&param=36&act=view&article_id=e9NxGAKOYZMp" target="_blank">2025年四川普通本科录取分数统计表</a> ｜
+      所在地：绵阳 ｜ 办学性质：<strong>公办</strong>
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>538</strong></td><td>25,709</td><td>467</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td><strong>517</strong></td><td>27,305</td><td>457</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td><strong>518</strong></td><td>26,146</td><td>458</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:8px;font-size:0.9rem;">
+      <strong>📊 2025年官方各专业最低分（官方数据）：</strong>思想政治教育549｜地理科学545｜汉语言文学544｜英语543｜历史学542｜小学教育541｜应用心理学540｜汉语国际教育539｜广播电视学539｜学前教育539｜旅游管理538｜城乡规划538｜风景园林538｜物流管理538｜德语538｜社会工作538｜园林（需生物）519
+    </p>
+  </div>
+
+  <!-- 5. 西华师范大学 -->
+  <div class="detail-card">
+    <h3>第5名：西华师范大学 — 近三年文科/历史类录取详情</h3>
+    <div class="meta">
+      📌 官方招生信息网：<a href="https://zs.cwnu.edu.cn" target="_blank">zs.cwnu.edu.cn</a> ｜
+      层次：省属重点大学 ｜ 所在地：南充 ｜ 办学性质：<strong>公办</strong>
+    </div>
+    <div class="highlight-box">
+      <strong>⚠️ 特别注意：</strong>西华师大是原"本科一批"院校，师范实力仅次于川师大。
+      2025年新高考批次合并后，最低位次从2023年的14,959名大幅后移至26,727名——这主要是因为<strong>批次合并导致原二本专业组拉低了整体最低分</strong>。
+      其<strong>主力师范专业组（101组563分、102组559分）</strong>仍然保持很高水准，不要被最低分误导。
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th><th>主力专业组分数</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>536</strong></td><td>26,727</td><td>467</td><td>101组563 / 102组559 / 108组555 / 104组552</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科一批</td><td><strong>534</strong></td><td>17,719</td><td>529</td><td>—</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科一批</td><td><strong>539</strong></td><td>14,959</td><td>527</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 6. 乐山师范学院 -->
+  <div class="detail-card">
+    <h3>第6名：乐山师范学院 — 近三年文科/历史类录取详情</h3>
+    <div class="meta">
+      📌 官方招生网：<a href="http://zs.lsnu.edu.cn/lnlq.htm" target="_blank">zs.lsnu.edu.cn/lnlq.htm</a> ｜
+      校二级学院官方发布：<a href="https://shengkxy.lsnu.edu.cn/info/1136/6917.htm" target="_blank">含2025年投档分数</a> ｜
+      所在地：乐山 ｜ 办学性质：<strong>公办</strong>
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>533</strong></td><td>28,339</td><td>467</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td><strong>516</strong></td><td>27,969</td><td>457</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td><strong>516</strong></td><td>27,412</td><td>458</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:8px;font-size:0.9rem;">
+      <strong>📊 2025年各专业组：</strong>105组（思政）542分｜106组（地理）537分｜103组（汉语言/历史）536分｜101/102/104组533分
+    </p>
+  </div>
+
+  <!-- 7. 阿坝师范学院 -->
+  <div class="detail-card">
+    <h3>第7名：阿坝师范学院 — 近三年文科/历史类录取详情</h3>
+    <div class="meta">
+      📌 官方招生网：zs.abtu.edu.cn ｜
+      所在地：阿坝藏族羌族自治州汶川县水磨古镇 ｜ 办学性质：<strong>公办</strong> ｜ 民族地区院校
+    </div>
+    <div class="table-wrap">
+      <table style="min-width:auto;">
+        <thead><tr><th>年份</th><th>批次</th><th>最低分</th><th>最低位次</th><th>省控线</th></tr></thead>
+        <tbody>
+          <tr><td><strong>2025</strong></td><td>本科批B段</td><td><strong>524</strong></td><td>33,264</td><td>467</td></tr>
+          <tr><td><strong>2024</strong></td><td>本科二批</td><td><strong>510</strong></td><td>32,170</td><td>457</td></tr>
+          <tr><td><strong>2023</strong></td><td>本科二批</td><td><strong>508</strong></td><td>33,026</td><td>458</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:8px;font-size:0.9rem;">
+      <strong>📊 2025年各专业组：</strong>102组（学前/汉语言）533分｜104组（思政）531分｜105组（地理）529分｜101组（英语/小教）528分｜103组（财会）524分
+    </p>
+  </div>
+
+  <!-- ==================== 数据来源汇总 ==================== -->
+  <div class="section-title">🔗 官方数据来源汇总</div>
+
+  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:32px;">
+    <table style="min-width:auto;">
+      <thead>
+        <tr><th style="width:160px;">学校</th><th>官方招生网站</th><th>2025年数据获取</th><th>2023-2024年数据来源</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>绵阳师范学院</strong></td>
+          <td><a href="https://zs.mtc.edu.cn" target="_blank">zs.mtc.edu.cn</a></td>
+          <td><a href="https://zs.mtc.edu.cn/index.php?sys=home&module=article&param=36&act=view&article_id=e9NxGAKOYZMp" target="_blank">✅ 官方原始数据页</a> — 完整提取</td>
+          <td>掌上高考 / gk100.com 交叉验证</td>
+        </tr>
+        <tr>
+          <td><strong>四川师范大学</strong></td>
+          <td><a href="https://zs.sicnu.edu.cn" target="_blank">zs.sicnu.edu.cn</a></td>
+          <td>官网已发布DocViewPage.aspx?Id=162484，经高考平台交叉验证</td>
+          <td><a href="https://www.daxuejiayou.com/1670271255.html" target="_blank">daxuejiayou.com</a> / gk100.com</td>
+        </tr>
+        <tr>
+          <td><strong>西华师范大学</strong></td>
+          <td><a href="https://zs.cwnu.edu.cn" target="_blank">zs.cwnu.edu.cn</a></td>
+          <td>官网"历年分数"查询，经高考平台交叉验证</td>
+          <td><a href="https://www.dxsbb.com/news/88901.html" target="_blank">dxsbb.com</a> / gk100.com</td>
+        </tr>
+        <tr>
+          <td><strong>成都师范学院</strong></td>
+          <td><a href="https://www.cdnu.edu.cn/zjc/" target="_blank">cdnu.edu.cn/zjc</a></td>
+          <td>招生就业处发布，经高考平台交叉验证</td>
+          <td><a href="https://www.dakao100.com/article_88882194719.html" target="_blank">dakao100.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>内江师范学院</strong></td>
+          <td>zs.neijiang.edu.cn</td>
+          <td>经掌上高考 / gk100.com 交叉验证</td>
+          <td><a href="https://www.daxuejiayou.com/678456762.html" target="_blank">daxuejiayou.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>乐山师范学院</strong></td>
+          <td><a href="http://zs.lsnu.edu.cn/lnlq.htm" target="_blank">zs.lsnu.edu.cn/lnlq.htm</a></td>
+          <td><a href="https://shengkxy.lsnu.edu.cn/info/1136/6917.htm" target="_blank">二级学院官方页面</a>（图片形式）经高考平台验证</td>
+          <td><a href="https://www.daxuejiayou.com/647835365.html" target="_blank">daxuejiayou.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>阿坝师范学院</strong></td>
+          <td>zs.abtu.edu.cn</td>
+          <td>经掌上高考 / gk100.com 交叉验证</td>
+          <td><a href="https://www.daxuejiayou.com/3577376158.html" target="_blank">daxuejiayou.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box" style="margin-top:20px;">
+      <strong>📌 关于数据来源的重要说明：</strong><br><br>
+      ① <strong>绵阳师范学院</strong>的2025年数据是从其招生信息网官方原始发布页<strong>完整提取</strong>的，包含全部专业的精确分数，是本次整理中可信度最高的数据。<br><br>
+      ② 其余6所院校的2025年数据，官网已发布录取公告，但多因页面技术限制（图片格式、动态加载等）无法完整抓取文本，因此综合<strong>掌上高考(gaokao.cn)、高考网(gk100.com)、大学加油网(daxuejiayou.com)</strong>等多个主流高考数据平台进行交叉验证。<br><br>
+      ③ 2023-2024年数据（旧高考体系）主要来自各高考数据平台的历年汇总。<br><br>
+      ④ 所有分数均可在各校官方招生网（见上表链接）或<strong>四川省教育考试院官网(<a href="https://www.sceea.cn" target="_blank">sceea.cn</a>)</strong>进行最终核实。<br><br>
+      ⑤ <strong>四川省内7所本科师范大学全部为公办院校，无一所民办。</strong>
+    </div>
+  </div>
+
+  <!-- ==================== 关键发现 ==================== -->
+  <div class="section-title">💡 关键发现与报考建议</div>
+
+  <div class="detail-card">
+    <ol style="padding-left:20px; line-height:2.2; font-size:0.95rem;">
+      <li><strong>全部公办，无民办：</strong>四川省内7所本科师范大学全部是公办院校。如果有机构或平台告诉你某所"民办师范大学"在四川，那是错误的。</li>
+      <li><strong>看位次，别看分数：</strong>2025年新高考后分数普遍"虚高"，但位次变化不大。比如成都师范学院2023-2025年位次始终在22,300～22,500之间纹丝不动。</li>
+      <li><strong>四川师大的"双校区套利"：</strong>遂宁校区比成都校区低14分（历史类），但毕业证完全一样——全省前2.5万名可冲刺遂宁校区。</li>
+      <li><strong>西华师大被严重低估：</strong>它是正牌的省属重点+原一本院校，主力专业组（563分）仅次于川师大。不要被536的最低分迷惑。</li>
+      <li><strong>成都区位 = 隐性加分：</strong>成都师范学院和四川师大（成都）因地段优势，录取位次明显高于同档次地市院校。</li>
+      <li><strong>乐山师院最稳定：</strong>近三年位次2.7～2.8万，几乎无波动，是最好预测的"安全牌"。</li>
+      <li><strong>阿坝师院=保底首选：</strong>位次3.2～3.3万即可录取，是省内公办师范本科的最低门槛。虽然是民族地区院校，但公办本科的含金量在就业市场上远高于民办。</li>
+      <li><strong>公费师范生单独通道：</strong>各校公费师范生（提前批）录取分远高于普通批，如成都师范学院历史类公费师范生最高611分，但毕业包分配。</li>
+    </ol>
+  </div>
+
+</div>
+
+<footer>
+  <p>📅 数据整理日期：2026年6月23日 ｜ 数据年份：2023年、2024年、2025年高考录取</p>
+  <p>
+    数据来源：
+    <a href="https://zs.mtc.edu.cn" target="_blank">绵阳师范学院招生信息网</a> ·
+    <a href="https://zs.sicnu.edu.cn" target="_blank">四川师范大学招生信息网</a> ·
+    <a href="https://zs.cwnu.edu.cn" target="_blank">西华师范大学招生信息网</a> ·
+    <a href="https://www.cdnu.edu.cn/zjc/" target="_blank">成都师范学院招生就业处</a> ·
+    <a href="http://zs.lsnu.edu.cn/lnlq.htm" target="_blank">乐山师范学院招生网</a> ·
+    <a href="https://www.gaokao.cn" target="_blank">掌上高考</a> ·
+    <a href="https://www.sceea.cn" target="_blank">四川省教育考试院</a>
+  </p>
+  <p style="margin-top:8px; opacity:0.7;">
+    ⚠️ 免责声明：以上数据综合整理自各高校官方招生网站及权威高考信息平台。2025年四川实行新高考改革，历年数据仅供参考。建议考生以四川省教育考试院及各校招生网最新公布为准。
+  </p>
+</footer>
+
+</body>
+</html>
