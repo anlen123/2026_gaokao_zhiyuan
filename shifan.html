@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全国公办院校 · 师范类专业 · 四川历年分数线 · 2026年志愿分析</title>
+<style>
+:root{
+  --bg:#f0f4f8;--card:#fff;--text:#1a202c;--sub:#718096;--border:#e2e8f0;
+  --purple:#5a4fcf;--green:#16a34a;--amber:#d97706;--red:#dc2626;
+  --my-color:#7c3aed;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+/* ===== HEADER ===== */
+header{
+  background:linear-gradient(135deg,#1e1b4b 0%,#312e81 40%,#4f46e5 75%,#7c3aed 100%);
+  color:#fff;padding:52px 20px 40px;text-align:center;
+}
+header h1{font-size:2rem;margin-bottom:10px;letter-spacing:-.5px}
+header p{opacity:.88;font-size:1rem;margin-bottom:18px}
+.hbadge{
+  display:inline-block;padding:5px 16px;border-radius:20px;
+  font-size:.82rem;font-weight:600;margin:4px;
+}
+.hb-purple{background:rgba(167,139,250,.35);border:1px solid rgba(167,139,250,.5)}
+.hb-green{background:rgba(74,222,128,.25);border:1px solid rgba(74,222,128,.4)}
+.hb-amber{background:rgba(251,191,36,.25);border:1px solid rgba(251,191,36,.4)}
+.hb-score{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);font-weight:700;font-size:.95rem}
+
+/* ===== NAV BAR ===== */
+.nav{background:#fff;border-bottom:1px solid var(--border);padding:9px 16px;
+  position:sticky;top:0;z-index:200;box-shadow:0 1px 5px rgba(0,0,0,.08);
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:.82rem}
+.nav-cur{background:#4f46e5;color:#fff;padding:4px 13px;border-radius:12px;font-weight:700}
+.nav a{color:#4f46e5;padding:4px 13px;border-radius:12px;background:#ede9fe;text-decoration:none;font-weight:600}
+.nav a:hover{background:#c7d2fe}
+.nav-sep{color:#cbd5e1}
+
+/* ===== CONTAINER ===== */
+.wrap{max-width:1600px;margin:0 auto;padding:20px}
+
+/* ===== MY SCORE BANNER ===== */
+.myscore{
+  background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  color:#fff;border-radius:16px;padding:22px 28px;
+  display:grid;grid-template-columns:auto auto auto auto 1fr;
+  align-items:center;gap:24px;margin:24px 0 20px;
+}
+.myscore .item-lbl{font-size:.82rem;opacity:.82;margin-bottom:2px}
+.myscore .item-val{font-size:2.2rem;font-weight:900;line-height:1}
+.myscore .sep{font-size:1.6rem;opacity:.6}
+.myscore .gap-badge{
+  background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);
+  border-radius:12px;padding:8px 18px;font-weight:700;font-size:1.1rem;
+  white-space:nowrap;
+}
+.myscore .tip{font-size:.83rem;opacity:.85;line-height:1.6}
+@media(max-width:768px){.myscore{grid-template-columns:1fr 1fr;gap:12px;padding:16px}}
+
+/* ===== CARDS ===== */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.card .lbl{font-size:.76rem;color:var(--sub);margin-bottom:4px}
+.card .val{font-size:1.55rem;font-weight:800;line-height:1.2}
+.card .note{font-size:.72rem;color:var(--sub);margin-top:4px}
+
+/* ===== SECTION TITLES ===== */
+.sec{font-size:1.15rem;font-weight:700;margin:28px 0 12px;padding-bottom:7px;
+  border-bottom:3px solid #4f46e5;display:flex;align-items:center;gap:10px}
+.sec .badge{font-size:.77rem;font-weight:600;padding:2px 10px;border-radius:10px;background:#ede9fe;color:#4338ca}
+
+/* ===== RANGE OVERVIEW ===== */
+.range-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:24px}
+.range-card{border-radius:10px;padding:12px;text-align:center;border:2px solid transparent}
+.rc-out{background:#fef2f2;border-color:#fca5a5}
+.rc-risk{background:#fff7ed;border-color:#fed7aa}
+.rc-near{background:#fefce8;border-color:#fde047}
+.rc-ok{background:#f0fdf4;border-color:#86efac}
+.rc-safe{background:#dcfce7;border-color:#4ade80}
+.range-card .rlbl{font-size:.73rem;font-weight:700;margin-bottom:4px}
+.range-card .rval{font-size:1rem;font-weight:800;line-height:1.3}
+.range-card .rcnt{font-size:.7rem;color:var(--sub);margin-top:3px}
+
+/* ===== TABLE ===== */
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--border);
+  border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:32px}
+table{width:100%;border-collapse:collapse;font-size:.84rem;min-width:1050px}
+th{
+  background:#f8faff;text-align:center;padding:10px 8px;font-weight:700;
+  color:#374151;font-size:.74rem;white-space:nowrap;border-bottom:2px solid var(--border);
+  position:sticky;top:0;
+}
+th.col-school{text-align:left}
+td{padding:8px 8px;border-bottom:1px solid var(--border);text-align:center;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+
+/* row styles */
+.r-985{background:linear-gradient(90deg,#fef9c3,#fff)!important;border-left:5px solid #f59e0b}
+.r-211{background:linear-gradient(90deg,#fefce8,#fff)!important;border-left:5px solid #eab308}
+.r-key{background:linear-gradient(90deg,#eff6ff,#fff)!important;border-left:4px solid #3b82f6}
+.r-sic{background:linear-gradient(90deg,#f0fdf4,#fff)!important;border-left:4px solid #22c55e}
+.r-pub{border-left:3px solid #cbd5e1}
+.r-ok{background:linear-gradient(90deg,#f0fdf4,#fff)!important;border-left:4px solid #16a34a}
+.r-safe{background:linear-gradient(90deg,#dcfce7,#fff)!important;border-left:5px solid #22c55e}
+
+/* group headers */
+.grp td{font-weight:700;font-size:.88rem;padding:12px 14px;border-top:2px dashed var(--border);border-bottom:2px dashed var(--border)}
+.grp-985 td{background:#fef3c7;color:#78350f}
+.grp-211 td{background:#fefce8;color:#854d0e}
+.grp-key td{background:#eff6ff;color:#1e40af}
+.grp-sic td{background:#f0fdf4;color:#166534}
+.grp-pub td{background:#f8fafc;color:#374151}
+.grp-ok td{background:#f0fdf4;color:#15803d}
+.grp-safe td{background:#dcfce7;color:#14532d}
+
+/* MY SCORE LINE */
+.my-line td{
+  background:linear-gradient(90deg,#f5f3ff,#ede9fe)!important;
+  border-top:3px solid #7c3aed!important;border-bottom:3px solid #7c3aed!important;
+  font-weight:800;color:#4c1d95;padding:14px 8px;
+}
+
+/* school cell */
+.sch{text-align:left;min-width:150px}
+.sname{font-weight:700;font-size:.9rem;color:var(--text)}
+.sloc{font-size:.69rem;color:var(--sub);margin-top:1px}
+.tag{display:inline-block;font-size:.62rem;padding:1px 6px;border-radius:8px;font-weight:700;margin:1px}
+.t985{background:#fef3c7;color:#92400e}
+.t211{background:#fde68a;color:#78350f}
+.tkey{background:#dbeafe;color:#1e40af}
+.tpub{background:#e0f2fe;color:#0369a1}
+.tsic{background:#dcfce7;color:#166534}
+
+/* score cells */
+.sc-h{font-weight:800;font-size:.93rem;color:#4f46e5}
+.sc-m{font-weight:600;color:var(--text)}
+.sc-s{font-size:.72rem;color:var(--sub);display:block;margin-top:1px}
+.rk{font-size:.72rem;color:var(--sub)}
+
+/* predict & verdict */
+.pred{background:#f5f3ff;font-weight:800;color:#4338ca;font-size:.92rem}
+.pred-ok{background:#f0fdf4;font-weight:800;color:#15803d}
+.pred-near{background:#fffbeb;font-weight:800;color:#92400e}
+.v-no{color:#dc2626;font-weight:700;font-size:.78rem}
+.v-risk{color:#ea580c;font-weight:700;font-size:.78rem}
+.v-near{color:#ca8a04;font-weight:700;font-size:.78rem}
+.v-ok{color:#16a34a;font-weight:700;font-size:.78rem}
+.v-safe{color:#15803d;font-weight:800;font-size:.78rem}
+
+/* info boxes */
+.info{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px 18px;margin:16px 0;font-size:.86rem}
+.warn{background:#fffbeb;border:1px solid #fed7aa;border-radius:10px;padding:14px 18px;margin:16px 0;font-size:.86rem}
+.err{background:#fef2f2;border-left:4px solid #ef4444;padding:12px 16px;margin:16px 0;border-radius:0 10px 10px 0;font-size:.84rem}
+
+/* summary table for in-range schools */
+.sum-table{width:100%;border-collapse:collapse;font-size:.87rem}
+.sum-table th{background:#f0fdf4;padding:10px 12px;text-align:left;font-weight:700;color:#166534;border-bottom:2px solid #86efac}
+.sum-table td{padding:10px 12px;border-bottom:1px solid #d1fae5;vertical-align:top}
+.sum-table tr:last-child td{border-bottom:none}
+.sum-table tr:hover{background:#f0fdf4}
+
+footer{text-align:center;padding:28px 20px;color:var(--sub);font-size:.82rem;border-top:1px solid var(--border);margin-top:40px}
+footer a{color:#4f46e5;text-decoration:none}
+
+@media(max-width:768px){
+  header h1{font-size:1.3rem}
+  .wrap{padding:10px}
+  td,th{padding:5px 5px;font-size:.72rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <h1>🏫 全国公办院校 · 师范类专业 · 四川历年录取分数线总览</h1>
+  <p>含专门师范大学/学院 及 综合类院校师范相关专业 · 2023–2025年四川录取数据 · 含2026年预测与个人成绩对照</p>
+  <div>
+    <span class="hbadge hb-purple">⭐ 双一流9所</span>
+    <span class="hbadge hb-amber">🏛 省属重点 ~22所</span>
+    <span class="hbadge hb-green">📚 一般公办 ~24所</span>
+    <span class="hbadge hb-score">🎯 我的分数：497分 · 超线 +42分</span>
+  </div>
+</header>
+
+<!-- ===== NAV ===== -->
+<div class="nav">
+  <span class="nav-cur">🏫 全国师范专业（本页）</span>
+  <span class="nav-sep">|</span>
+  <a href="index.html">📚 文科完整排名</a>
+  <a href="gongban.html">🏛 四川公办7所</a>
+  <a href="quanguo.html">🗺 全国师范大学总览</a>
+  <a href="like.html">🔬 理科排名</a>
+</div>
+
+<div class="wrap">
+
+<!-- ===== MY SCORE ===== -->
+<div class="myscore">
+  <div>
+    <div class="item-lbl">我的成绩（2026届·历史类）</div>
+    <div class="item-val">497</div>
+  </div>
+  <div class="sep">—</div>
+  <div>
+    <div class="item-lbl">2026年四川历史类本科线</div>
+    <div class="item-val" style="opacity:.75">455</div>
+  </div>
+  <div class="sep">=</div>
+  <div class="gap-badge">超线 <span style="font-size:1.4rem">+42分</span></div>
+  <div class="tip">
+    📌 <strong>本页按2025年四川最低分从高到低排列</strong><br>
+    紫色分割线 = 我的497分位置 · 绿色行 = 预测可报 · 红色行 = 超出范围<br>
+    省外数据标注⚠️系估算，误差约±10分，填报前务必核实官方数据
+  </div>
+</div>
+
+<!-- ===== CARDS ===== -->
+<div class="cards">
+  <div class="card"><div class="lbl">🏫 本页院校总数</div><div class="val" style="color:#4f46e5">~55所</div><div class="note">公办院校</div></div>
+  <div class="card"><div class="lbl">⭐ 双一流师范</div><div class="val" style="color:#f59e0b">9所</div><div class="note">最低551分</div></div>
+  <div class="card"><div class="lbl">✅ 497分可报</div><div class="val" style="color:#16a34a">~14所</div><div class="note">2026预测分≤497</div></div>
+  <div class="card" style="border:2px solid #059669;background:#ecfdf5"><div class="lbl">🆕 2026年本科线</div><div class="val" style="color:#059669">455分</div><div class="note">历史类</div></div>
+  <div class="card" style="border:2px solid #7c3aed;background:#f5f3ff"><div class="lbl">🎯 我的分数</div><div class="val" style="color:#7c3aed">497分</div><div class="note">超线 +42分</div></div>
+  <div class="card"><div class="lbl">🔴 超出范围</div><div class="val" style="color:#dc2626">~41所</div><div class="note">2026预测>497分</div></div>
+</div>
+
+<!-- ===== 分数段概览 ===== -->
+<div class="sec">📊 按难度分段概览 <span class="badge">我的497分对应位置</span></div>
+<div class="range-grid">
+  <div class="range-card rc-out"><div class="rlbl" style="color:#dc2626">❌ 远超范围</div><div class="rval">≥540分</div><div class="rcnt">双一流+省重点<br>~17所</div></div>
+  <div class="range-card rc-out"><div class="rlbl" style="color:#dc2626">❌ 超出较多</div><div class="rval">520–539分</div><div class="rcnt">省重点+四川公办<br>~14所</div></div>
+  <div class="range-card rc-risk"><div class="rlbl" style="color:#ea580c">❌ 仍超出</div><div class="rval">508–519分</div><div class="rcnt">一般公办<br>~8所</div></div>
+  <div class="range-card rc-near" style="border-width:3px"><div class="rlbl" style="color:#ca8a04">⚠️ 接近</div><div class="rval">498–507分</div><div class="rcnt">可冲<br>~4所</div></div>
+  <div class="range-card" style="background:#f5f3ff;border:3px solid #7c3aed">
+    <div class="rlbl" style="color:#7c3aed">🎯 我的497分</div>
+    <div class="rval" style="color:#7c3aed">← 在这里</div>
+    <div class="rcnt">超线+42分</div>
+  </div>
+  <div class="range-card rc-ok"><div class="rlbl" style="color:#16a34a">✅ 稳报</div><div class="rval">487–496分</div><div class="rcnt">余量1–10分<br>~5所</div></div>
+  <div class="range-card rc-safe"><div class="rlbl" style="color:#14532d">✅ 很稳</div><div class="rval">≤486分</div><div class="rcnt">余量11分以上<br>~9所</div></div>
+</div>
+
+<!-- ===== 数据说明 ===== -->
+<div class="err">⚠️ <strong>数据说明：</strong>四川省内7所（绿色行）数据已从官方渠道核实（✅核）；省外院校数据来自训练知识（⚠️估），系估算值，误差约±10分。2026年实际录取数据以<a href="https://www.sceea.cn" target="_blank">四川省教育考试院</a>及各校官方招生网公布为准，切勿仅凭本页数据报名。</div>
+
+<!-- ===== 主表格 ===== -->
+<div class="sec">📋 全国公办院校师范专业 · 四川历年录取分数 <span class="badge">按2025年分从高到低</span></div>
+
+<div class="tw">
+<table>
+<thead>
+<tr>
+  <th style="width:36px">序</th>
+  <th class="col-school" style="min-width:165px">院校名称</th>
+  <th style="width:55px">省份</th>
+  <th>
+    2025年<br>历史类最低分<br>
+    <span style="font-weight:400;color:#d97706;font-size:.68rem">本科线467</span>
+  </th>
+  <th>
+    2025年<br>最低位次
+  </th>
+  <th>
+    2024年<br>文科最低分/批次<br>
+    <span style="font-weight:400;color:#d97706;font-size:.68rem">一批529/二批457</span>
+  </th>
+  <th>
+    2024年<br>最低位次
+  </th>
+  <th>
+    2023年<br>文科最低分/批次<br>
+    <span style="font-weight:400;color:#d97706;font-size:.68rem">一批527/二批458</span>
+  </th>
+  <th>
+    2023年<br>最低位次
+  </th>
+  <th style="background:#f5f3ff;color:#4338ca;min-width:78px">
+    2026年<br>预测分
+  </th>
+  <th style="min-width:115px">vs 我的497</th>
+</tr>
+</thead>
+<tbody>
+
+<!-- ===== 985师范 ===== -->
+<tr class="grp grp-985"><td colspan="11">⭐ 985 师范大学（2所）· 顶尖层次，全省前300名，远超497分</td></tr>
+
+<tr class="r-985">
+  <td>1</td>
+  <td class="sch">
+    <div class="sname">北京师范大学</div>
+    <div class="sloc">📍 北京·海淀区·双校区</div>
+    <span class="tag t985">985</span><span class="tag t211">211</span>
+  </td>
+  <td>北京</td>
+  <td><span class="sc-h">638</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~150名</td>
+  <td>632 一批 ⚠️估</td>
+  <td class="rk">~200名</td>
+  <td>643 一批 ⚠️估</td>
+  <td class="rk">~150名</td>
+  <td class="pred">~637</td>
+  <td class="v-no">❌ 差140分</td>
+</tr>
+<tr class="r-985">
+  <td>2</td>
+  <td class="sch">
+    <div class="sname">华东师范大学</div>
+    <div class="sloc">📍 上海·闵行区（含中山北路校区）</div>
+    <span class="tag t985">985</span><span class="tag t211">211</span>
+  </td>
+  <td>上海</td>
+  <td><span class="sc-h">620</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~600名</td>
+  <td>614 一批 ⚠️估</td>
+  <td class="rk">~700名</td>
+  <td>622 一批 ⚠️估</td>
+  <td class="rk">~600名</td>
+  <td class="pred">~619</td>
+  <td class="v-no">❌ 差122分</td>
+</tr>
+
+<!-- ===== 211师范 ===== -->
+<tr class="grp grp-211"><td colspan="11">⭐ 211 师范大学（7所）· 前4000～12000名，需520分以上</td></tr>
+
+<tr class="r-211">
+  <td>3</td>
+  <td class="sch">
+    <div class="sname">南京师范大学</div>
+    <div class="sloc">📍 江苏·南京市·随园/仙林双校区</div>
+    <span class="tag t211">211</span>
+  </td>
+  <td>江苏</td>
+  <td><span class="sc-h">575</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~3,000名</td>
+  <td>568 一批 ⚠️估</td>
+  <td class="rk">~3,500名</td>
+  <td>578 一批 ⚠️估</td>
+  <td class="rk">~3,000名</td>
+  <td class="pred">~574</td>
+  <td class="v-no">❌ 差77分</td>
+</tr>
+<tr class="r-211">
+  <td>4</td>
+  <td class="sch">
+    <div class="sname">华中师范大学</div>
+    <div class="sloc">📍 湖北·武汉市·桂子山校区</div>
+    <span class="tag t211">211</span>
+  </td>
+  <td>湖北</td>
+  <td><span class="sc-h">572</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~3,800名</td>
+  <td>564 一批 ⚠️估</td>
+  <td class="rk">~4,500名</td>
+  <td>574 一批 ⚠️估</td>
+  <td class="rk">~4,000名</td>
+  <td class="pred">~571</td>
+  <td class="v-no">❌ 差74分</td>
+</tr>
+<tr class="r-211">
+  <td>5</td>
+  <td class="sch">
+    <div class="sname">华南师范大学</div>
+    <div class="sloc">📍 广东·广州市·石牌/大学城校区</div>
+    <span class="tag t211">211</span>
+  </td>
+  <td>广东</td>
+  <td><span class="sc-h">570</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~4,200名</td>
+  <td>562 一批 ⚠️估</td>
+  <td class="rk">~5,000名</td>
+  <td>572 一批 ⚠️估</td>
+  <td class="rk">~4,400名</td>
+  <td class="pred">~569</td>
+  <td class="v-no">❌ 差72分</td>
+</tr>
+<tr class="r-211">
+  <td>6</td>
+  <td class="sch">
+    <div class="sname">湖南师范大学</div>
+    <div class="sloc">📍 湖南·长沙市·岳麓山下</div>
+    <span class="tag t211">211</span>
+  </td>
+  <td>湖南</td>
+  <td><span class="sc-h">562</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~6,000名</td>
+  <td>555 一批 ⚠️估</td>
+  <td class="rk">~6,500名</td>
+  <td>563 一批 ⚠️估</td>
+  <td class="rk">~5,800名</td>
+  <td class="pred">~561</td>
+  <td class="v-no">❌ 差64分</td>
+</tr>
+<tr class="r-211">
+  <td>7</td>
+  <td class="sch">
+    <div class="sname">东北师范大学</div>
+    <div class="sloc">📍 吉林·长春市·净月/本部双校区</div>
+    <span class="tag t211">211</span>
+  </td>
+  <td>吉林</td>
+  <td><span class="sc-h">561</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~6,200名</td>
+  <td>554 一批 ⚠️估</td>
+  <td class="rk">~7,000名</td>
+  <td>564 一批 ⚠️估</td>
+  <td class="rk">~6,000名</td>
+  <td class="pred">~560</td>
+  <td class="v-no">❌ 差63分</td>
+</tr>
+<tr class="r-211">
+  <td>8</td>
+  <td class="sch">
+    <div class="sname">陕西师范大学</div>
+    <div class="sloc">📍 陕西·西安市·长安/雁塔双校区</div>
+    <span class="tag t211">211</span>
+  </td>
+  <td>陕西</td>
+  <td><span class="sc-h">559</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~6,800名</td>
+  <td>551 一批 ⚠️估</td>
+  <td class="rk">~8,000名</td>
+  <td>562 一批 ⚠️估</td>
+  <td class="rk">~6,500名</td>
+  <td class="pred">~558</td>
+  <td class="v-no">❌ 差61分</td>
+</tr>
+<tr class="r-211">
+  <td>9</td>
+  <td class="sch">
+    <div class="sname">西北师范大学</div>
+    <div class="sloc">📍 甘肃·兰州市·安宁校区</div>
+    <span class="tag t211">211</span>
+  </td>
+  <td>甘肃</td>
+  <td><span class="sc-h">551</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~10,000名</td>
+  <td>542 一批 ⚠️估</td>
+  <td class="rk">~12,000名</td>
+  <td>552 一批 ⚠️估</td>
+  <td class="rk">~10,500名</td>
+  <td class="pred">~550</td>
+  <td class="v-no">❌ 差53分</td>
+</tr>
+
+<!-- ===== 省属重点（非双一流）===== -->
+<tr class="grp grp-key"><td colspan="11">🏛 省属重点师范大学（非双一流，约22所）· 前6000～28000名，520–565分段</td></tr>
+
+<tr class="r-key">
+  <td>10</td>
+  <td class="sch">
+    <div class="sname">首都师范大学</div>
+    <div class="sloc">📍 北京·石景山区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>北京</td>
+  <td><span class="sc-h">563</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~5,500名</td>
+  <td>553 一批 ⚠️估</td>
+  <td class="rk">~7,000名</td>
+  <td>563 一批 ⚠️估</td>
+  <td class="rk">~5,500名</td>
+  <td class="pred">~561</td>
+  <td class="v-no">❌ 差64分</td>
+</tr>
+<tr class="r-key">
+  <td>11</td>
+  <td class="sch">
+    <div class="sname">上海师范大学</div>
+    <div class="sloc">📍 上海·徐汇区奉贤双校区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>上海</td>
+  <td><span class="sc-h">562</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~6,000名</td>
+  <td>553 一批 ⚠️估</td>
+  <td class="rk">~7,500名</td>
+  <td>562 一批 ⚠️估</td>
+  <td class="rk">~6,000名</td>
+  <td class="pred">~560</td>
+  <td class="v-no">❌ 差63分</td>
+</tr>
+<tr class="r-key">
+  <td>12</td>
+  <td class="sch">
+    <div class="sname">重庆师范大学</div>
+    <div class="sloc">📍 重庆·沙坪坝大学城</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>重庆</td>
+  <td><span class="sc-h">555</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~8,000名</td>
+  <td>541 一批 ⚠️估</td>
+  <td class="rk">~12,000名</td>
+  <td>549 一批 ⚠️估</td>
+  <td class="rk">~11,000名</td>
+  <td class="pred">~551</td>
+  <td class="v-no">❌ 差54分</td>
+</tr>
+<tr class="r-key">
+  <td>13</td>
+  <td class="sch">
+    <div class="sname">天津师范大学</div>
+    <div class="sloc">📍 天津·西青区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>天津</td>
+  <td><span class="sc-h">551</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~10,000名</td>
+  <td>542 一批 ⚠️估</td>
+  <td class="rk">~12,000名</td>
+  <td>549 一批 ⚠️估</td>
+  <td class="rk">~10,500名</td>
+  <td class="pred">~549</td>
+  <td class="v-no">❌ 差52分</td>
+</tr>
+<tr class="r-key">
+  <td>14</td>
+  <td class="sch">
+    <div class="sname">浙江师范大学</div>
+    <div class="sloc">📍 浙江·金华市·婺城区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>浙江</td>
+  <td><span class="sc-h">550</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~10,500名</td>
+  <td>542 一批 ⚠️估</td>
+  <td class="rk">~12,000名</td>
+  <td>551 一批 ⚠️估</td>
+  <td class="rk">~10,000名</td>
+  <td class="pred">~549</td>
+  <td class="v-no">❌ 差52分</td>
+</tr>
+<tr class="r-key">
+  <td>15</td>
+  <td class="sch">
+    <div class="sname">福建师范大学</div>
+    <div class="sloc">📍 福建·福州市·仓山/旗山双校区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>福建</td>
+  <td><span class="sc-h">550</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~10,500名</td>
+  <td>543 一批 ⚠️估</td>
+  <td class="rk">~11,500名</td>
+  <td>553 一批 ⚠️估</td>
+  <td class="rk">~9,500名</td>
+  <td class="pred">~549</td>
+  <td class="v-no">❌ 差52分</td>
+</tr>
+<tr class="r-key">
+  <td>16</td>
+  <td class="sch">
+    <div class="sname">山东师范大学</div>
+    <div class="sloc">📍 山东·济南市·长清湖校区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>山东</td>
+  <td><span class="sc-h">549</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~11,000名</td>
+  <td>540 一批 ⚠️估</td>
+  <td class="rk">~13,000名</td>
+  <td>550 一批 ⚠️估</td>
+  <td class="rk">~11,000名</td>
+  <td class="pred">~548</td>
+  <td class="v-no">❌ 差51分</td>
+</tr>
+<tr class="r-key">
+  <td>17</td>
+  <td class="sch">
+    <div class="sname">河南师范大学</div>
+    <div class="sloc">📍 河南·新乡市</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>河南</td>
+  <td><span class="sc-h">548</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~12,000名</td>
+  <td>540 一批 ⚠️估</td>
+  <td class="rk">~13,000名</td>
+  <td>549 一批 ⚠️估</td>
+  <td class="rk">~11,500名</td>
+  <td class="pred">~547</td>
+  <td class="v-no">❌ 差50分</td>
+</tr>
+<tr class="r-key">
+  <td>18</td>
+  <td class="sch">
+    <div class="sname">安徽师范大学</div>
+    <div class="sloc">📍 安徽·芜湖市·花津校区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>安徽</td>
+  <td><span class="sc-h">547</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~13,000名</td>
+  <td>538 一批 ⚠️估</td>
+  <td class="rk">~14,000名</td>
+  <td>548 一批 ⚠️估</td>
+  <td class="rk">~12,500名</td>
+  <td class="pred">~546</td>
+  <td class="v-no">❌ 差49分</td>
+</tr>
+
+<!-- 四川省内 -->
+<tr class="grp grp-sic"><td colspan="11">🏠 四川省内公办师范（7所）· 详见 <a href="gongban.html" style="color:#166534">公办详情页</a>，数据已核实</td></tr>
+
+<tr class="r-sic">
+  <td>—</td>
+  <td class="sch">
+    <div class="sname">四川师范大学</div>
+    <div class="sloc">📍 成都市（+遂宁校区）</div>
+    <span class="tag tsic">省重点</span><span class="tag" style="background:#fef3c7;color:#92400e">原一本</span>
+  </td>
+  <td>四川</td>
+  <td><span class="sc-h">553</span><span class="sc-s">✅核</span></td>
+  <td class="rk">18,797名</td>
+  <td>537 一批 ✅核<br><span class="sc-s">遂宁:530</span></td>
+  <td class="rk">16,236名</td>
+  <td>550 一批 ✅核<br><span class="sc-s">遂宁:527</span></td>
+  <td class="rk">10,591名</td>
+  <td class="pred">~540</td>
+  <td class="v-no">❌ 差43分</td>
+</tr>
+<tr class="r-sic">
+  <td>—</td>
+  <td class="sch">
+    <div class="sname">成都师范学院</div>
+    <div class="sloc">📍 成都市·温江区</div>
+    <span class="tag tsic">公办</span>
+  </td>
+  <td>四川</td>
+  <td><span class="sc-h">545</span><span class="sc-s">✅核</span></td>
+  <td class="rk">22,376名</td>
+  <td>525 二批 ✅核</td>
+  <td class="rk">22,548名</td>
+  <td>524 二批 ✅核</td>
+  <td class="rk">22,544名</td>
+  <td class="pred">~528</td>
+  <td class="v-no">❌ 差31分</td>
+</tr>
+<tr class="r-sic">
+  <td>—</td>
+  <td class="sch">
+    <div class="sname">内江师范学院</div>
+    <div class="sloc">📍 内江市</div>
+    <span class="tag tsic">公办</span>
+  </td>
+  <td>四川</td>
+  <td><span class="sc-h">543</span><span class="sc-s">✅核</span></td>
+  <td class="rk">23,302名</td>
+  <td>521 二批 ✅核</td>
+  <td class="rk">24,855名</td>
+  <td>522 二批 ✅核</td>
+  <td class="rk">23,718名</td>
+  <td class="pred">~526</td>
+  <td class="v-no">❌ 差29分</td>
+</tr>
+<tr class="r-sic">
+  <td>—</td>
+  <td class="sch">
+    <div class="sname">绵阳师范学院</div>
+    <div class="sloc">📍 绵阳市</div>
+    <span class="tag tsic">公办</span><span class="tag" style="background:#dcfce7;color:#14532d">官方数据</span>
+  </td>
+  <td>四川</td>
+  <td><span class="sc-h">538</span><span class="sc-s">✅核</span></td>
+  <td class="rk">25,709名</td>
+  <td>517 二批 ✅核</td>
+  <td class="rk">27,305名</td>
+  <td>518 二批 ✅核</td>
+  <td class="rk">26,146名</td>
+  <td class="pred">~521</td>
+  <td class="v-no">❌ 差24分</td>
+</tr>
+<tr class="r-sic">
+  <td>—</td>
+  <td class="sch">
+    <div class="sname">西华师范大学</div>
+    <div class="sloc">📍 南充市</div>
+    <span class="tag tsic">省重点</span><span class="tag" style="background:#fef3c7;color:#92400e">原一本</span>
+  </td>
+  <td>四川</td>
+  <td><span class="sc-h">536</span><span class="sc-s">✅核</span></td>
+  <td class="rk">26,727名</td>
+  <td>534 一批 ✅核</td>
+  <td class="rk">17,719名</td>
+  <td>539 一批 ✅核</td>
+  <td class="rk">14,959名</td>
+  <td class="pred">~537</td>
+  <td class="v-no">❌ 差40分</td>
+</tr>
+<tr class="r-sic">
+  <td>—</td>
+  <td class="sch">
+    <div class="sname">乐山师范学院</div>
+    <div class="sloc">📍 乐山市</div>
+    <span class="tag tsic">公办</span>
+  </td>
+  <td>四川</td>
+  <td><span class="sc-h">533</span><span class="sc-s">✅核</span></td>
+  <td class="rk">28,339名</td>
+  <td>516 二批 ✅核</td>
+  <td class="rk">27,969名</td>
+  <td>516 二批 ✅核</td>
+  <td class="rk">27,412名</td>
+  <td class="pred">~518</td>
+  <td class="v-no">❌ 差21分</td>
+</tr>
+<tr class="r-sic">
+  <td>—</td>
+  <td class="sch">
+    <div class="sname">阿坝师范学院</div>
+    <div class="sloc">📍 阿坝州·汶川县水磨古镇</div>
+    <span class="tag tsic">公办</span>
+  </td>
+  <td>四川</td>
+  <td><span class="sc-h">524</span><span class="sc-s">✅核</span></td>
+  <td class="rk">33,264名</td>
+  <td>510 二批 ✅核</td>
+  <td class="rk">32,170名</td>
+  <td>508 二批 ✅核</td>
+  <td class="rk">33,026名</td>
+  <td class="pred">~509</td>
+  <td class="v-no">❌ 差12分</td>
+</tr>
+
+<!-- 省属重点续 -->
+<tr class="grp grp-key"><td colspan="11">🏛 省属重点师范大学（续）· 520–545分段</td></tr>
+
+<tr class="r-key">
+  <td>19</td>
+  <td class="sch">
+    <div class="sname">江西师范大学</div>
+    <div class="sloc">📍 江西·南昌市·瑶湖校区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>江西</td>
+  <td><span class="sc-h">543</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~15,000名</td>
+  <td>534 一批 ⚠️估</td>
+  <td class="rk">~17,000名</td>
+  <td>543 一批 ⚠️估</td>
+  <td class="rk">~14,500名</td>
+  <td class="pred">~541</td>
+  <td class="v-no">❌ 差44分</td>
+</tr>
+<tr class="r-key">
+  <td>20</td>
+  <td class="sch">
+    <div class="sname">广西师范大学</div>
+    <div class="sloc">📍 广西·桂林市·王城/雁山双校区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>广西</td>
+  <td><span class="sc-h">540</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~17,000名</td>
+  <td>531 一批 ⚠️估</td>
+  <td class="rk">~19,000名</td>
+  <td>541 一批 ⚠️估</td>
+  <td class="rk">~16,000名</td>
+  <td class="pred">~539</td>
+  <td class="v-no">❌ 差42分</td>
+</tr>
+<tr class="r-key">
+  <td>21</td>
+  <td class="sch">
+    <div class="sname">河北师范大学</div>
+    <div class="sloc">📍 河北·石家庄市</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>河北</td>
+  <td><span class="sc-h">539</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~17,500名</td>
+  <td>531 一批 ⚠️估</td>
+  <td class="rk">~19,500名</td>
+  <td>542 一批 ⚠️估</td>
+  <td class="rk">~15,500名</td>
+  <td class="pred">~538</td>
+  <td class="v-no">❌ 差41分</td>
+</tr>
+<tr class="r-key">
+  <td>22</td>
+  <td class="sch">
+    <div class="sname">辽宁师范大学</div>
+    <div class="sloc">📍 辽宁·大连市·沙河口区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>辽宁</td>
+  <td><span class="sc-h">537</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~19,500名</td>
+  <td>530 一批 ⚠️估</td>
+  <td class="rk">~20,500名</td>
+  <td>538 一批 ⚠️估</td>
+  <td class="rk">~18,500名</td>
+  <td class="pred">~536</td>
+  <td class="v-no">❌ 差39分</td>
+</tr>
+<tr class="r-key">
+  <td>23</td>
+  <td class="sch">
+    <div class="sname">哈尔滨师范大学</div>
+    <div class="sloc">📍 黑龙江·哈尔滨市·松北区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>黑龙江</td>
+  <td><span class="sc-h">534</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~21,000名</td>
+  <td>530 一批 ⚠️估</td>
+  <td class="rk">~20,500名</td>
+  <td>537 一批 ⚠️估</td>
+  <td class="rk">~19,000名</td>
+  <td class="pred">~534</td>
+  <td class="v-no">❌ 差37分</td>
+</tr>
+<tr class="r-key">
+  <td>24</td>
+  <td class="sch">
+    <div class="sname">山西师范大学</div>
+    <div class="sloc">📍 山西·太原市（原临汾）</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>山西</td>
+  <td><span class="sc-h">532</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~22,500名</td>
+  <td>529 一批 ⚠️估</td>
+  <td class="rk">~21,000名</td>
+  <td>535 一批 ⚠️估</td>
+  <td class="rk">~20,000名</td>
+  <td class="pred">~532</td>
+  <td class="v-no">❌ 差35分</td>
+</tr>
+<tr class="r-key">
+  <td>25</td>
+  <td class="sch">
+    <div class="sname">云南师范大学</div>
+    <div class="sloc">📍 云南·昆明市·呈贡大学城</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>云南</td>
+  <td><span class="sc-h">529</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~23,500名</td>
+  <td>520 二批 ⚠️估</td>
+  <td class="rk">~24,000名</td>
+  <td>530 二批 ⚠️估</td>
+  <td class="rk">~22,500名</td>
+  <td class="pred">~527</td>
+  <td class="v-no">❌ 差30分</td>
+</tr>
+<tr class="r-key">
+  <td>26</td>
+  <td class="sch">
+    <div class="sname">海南师范大学</div>
+    <div class="sloc">📍 海南·海口市·龙华区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>海南</td>
+  <td><span class="sc-h">529</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~24,000名</td>
+  <td>519 二批 ⚠️估</td>
+  <td class="rk">~25,000名</td>
+  <td>528 二批 ⚠️估</td>
+  <td class="rk">~22,500名</td>
+  <td class="pred">~527</td>
+  <td class="v-no">❌ 差30分</td>
+</tr>
+<tr class="r-key">
+  <td>27</td>
+  <td class="sch">
+    <div class="sname">闽南师范大学</div>
+    <div class="sloc">📍 福建·漳州市</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>福建</td>
+  <td><span class="sc-h">526</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~27,000名</td>
+  <td>517 一批 ⚠️估</td>
+  <td class="rk">~25,000名</td>
+  <td>526 一批 ⚠️估</td>
+  <td class="rk">~24,000名</td>
+  <td class="pred">~524</td>
+  <td class="v-no">❌ 差27分</td>
+</tr>
+<tr class="r-key">
+  <td>28</td>
+  <td class="sch">
+    <div class="sname">阜阳师范大学</div>
+    <div class="sloc">📍 安徽·阜阳市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>安徽</td>
+  <td><span class="sc-h">525</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~27,500名</td>
+  <td>512 二批 ⚠️估</td>
+  <td class="rk">~30,000名</td>
+  <td>521 二批 ⚠️估</td>
+  <td class="rk">~27,000名</td>
+  <td class="pred">~521</td>
+  <td class="v-no">❌ 差24分</td>
+</tr>
+<tr class="r-key">
+  <td>29</td>
+  <td class="sch">
+    <div class="sname">贵州师范大学</div>
+    <div class="sloc">📍 贵州·贵阳市·白云区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>贵州</td>
+  <td><span class="sc-h">524</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~27,500名</td>
+  <td>513 二批 ⚠️估</td>
+  <td class="rk">~30,000名</td>
+  <td>524 二批 ⚠️估</td>
+  <td class="rk">~25,500名</td>
+  <td class="pred">~521</td>
+  <td class="v-no">❌ 差24分</td>
+</tr>
+<tr class="r-key">
+  <td>30</td>
+  <td class="sch">
+    <div class="sname">吉林师范大学（公办主体）</div>
+    <div class="sloc">📍 吉林·四平市（与博达学院独立）</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>吉林</td>
+  <td><span class="sc-h">524</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~27,500名</td>
+  <td>512 二批 ⚠️估</td>
+  <td class="rk">~30,500名</td>
+  <td>524 二批 ⚠️估</td>
+  <td class="rk">~26,000名</td>
+  <td class="pred">~521</td>
+  <td class="v-no">❌ 差24分</td>
+</tr>
+<tr class="r-key">
+  <td>31</td>
+  <td class="sch">
+    <div class="sname">淮北师范大学</div>
+    <div class="sloc">📍 安徽·淮北市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>安徽</td>
+  <td><span class="sc-h">522</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~29,000名</td>
+  <td>508 二批 ⚠️估</td>
+  <td class="rk">~32,000名</td>
+  <td>518 二批 ⚠️估</td>
+  <td class="rk">~28,500名</td>
+  <td class="pred">~519</td>
+  <td class="v-no">❌ 差22分</td>
+</tr>
+<tr class="r-key">
+  <td>32</td>
+  <td class="sch">
+    <div class="sname">内蒙古师范大学</div>
+    <div class="sloc">📍 内蒙古·呼和浩特市</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>内蒙古</td>
+  <td><span class="sc-h">521</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~29,500名</td>
+  <td>507 二批 ⚠️估</td>
+  <td class="rk">~32,000名</td>
+  <td>519 二批 ⚠️估</td>
+  <td class="rk">~28,000名</td>
+  <td class="pred">~517</td>
+  <td class="v-no">❌ 差20分</td>
+</tr>
+<tr class="r-key">
+  <td>33</td>
+  <td class="sch">
+    <div class="sname">广东第二师范学院</div>
+    <div class="sloc">📍 广东·广州市·海珠区</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>广东</td>
+  <td><span class="sc-h">519</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~31,000名</td>
+  <td>506 二批 ⚠️估</td>
+  <td class="rk">~34,000名</td>
+  <td>516 二批 ⚠️估</td>
+  <td class="rk">~30,000名</td>
+  <td class="pred">~516</td>
+  <td class="v-no">❌ 差19分</td>
+</tr>
+<tr class="r-key">
+  <td>34</td>
+  <td class="sch">
+    <div class="sname">韩山师范学院</div>
+    <div class="sloc">📍 广东·潮州市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>广东</td>
+  <td><span class="sc-h">516</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~33,000名</td>
+  <td>503 二批 ⚠️估</td>
+  <td class="rk">~37,000名</td>
+  <td>513 二批 ⚠️估</td>
+  <td class="rk">~32,000名</td>
+  <td class="pred">~513</td>
+  <td class="v-no">❌ 差16分</td>
+</tr>
+<tr class="r-key">
+  <td>35</td>
+  <td class="sch">
+    <div class="sname">岭南师范学院</div>
+    <div class="sloc">📍 广东·湛江市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>广东</td>
+  <td><span class="sc-h">513</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~35,000名</td>
+  <td>499 二批 ⚠️估</td>
+  <td class="rk">~40,000名</td>
+  <td>510 二批 ⚠️估</td>
+  <td class="rk">~34,000名</td>
+  <td class="pred">~510</td>
+  <td class="v-no">❌ 差13分</td>
+</tr>
+
+<!-- 接近范围 -->
+<tr class="grp grp-pub"><td colspan="11">📚 一般公办师范院校（接近/在497分范围内）</td></tr>
+
+<tr class="r-pub" style="background:#fff7ed!important;border-left:4px solid #fb923c">
+  <td>36</td>
+  <td class="sch">
+    <div class="sname">遵义师范学院</div>
+    <div class="sloc">📍 贵州·遵义市（汇川/新蒲校区）</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>贵州</td>
+  <td><span class="sc-h" style="color:#ea580c">512</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~36,000名</td>
+  <td>499 二批 ⚠️估</td>
+  <td class="rk">~40,000名</td>
+  <td>509 二批 ⚠️估</td>
+  <td class="rk">~34,000名</td>
+  <td class="pred-near">~509</td>
+  <td class="v-risk">❌ 差12分</td>
+</tr>
+<tr class="r-pub" style="background:#fff7ed!important;border-left:4px solid #fb923c">
+  <td>37</td>
+  <td class="sch">
+    <div class="sname">青海师范大学</div>
+    <div class="sloc">📍 青海·西宁市·城北区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>青海</td>
+  <td><span class="sc-h" style="color:#ea580c">511</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~35,000名</td>
+  <td>499 二批 ⚠️估</td>
+  <td class="rk">~40,000名</td>
+  <td>509 二批 ⚠️估</td>
+  <td class="rk">~33,000名</td>
+  <td class="pred-near">~500</td>
+  <td class="v-risk">⚠️ 差3分，高风险</td>
+</tr>
+<tr class="r-pub" style="background:#fefce8!important;border-left:4px solid #fde047">
+  <td>38</td>
+  <td class="sch">
+    <div class="sname">楚雄师范学院</div>
+    <div class="sloc">📍 云南·楚雄市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>云南</td>
+  <td><span class="sc-h" style="color:#ca8a04">507</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~38,000名</td>
+  <td>494 二批 ⚠️估</td>
+  <td class="rk">~45,000名</td>
+  <td>503 二批 ⚠️估</td>
+  <td class="rk">~36,000名</td>
+  <td class="pred-near">~498</td>
+  <td class="v-near">⚠️ 差1分，极接近</td>
+</tr>
+<tr class="r-pub" style="background:#fefce8!important;border-left:4px solid #fde047">
+  <td>39</td>
+  <td class="sch">
+    <div class="sname">曲靖师范学院</div>
+    <div class="sloc">📍 云南·曲靖市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>云南</td>
+  <td><span class="sc-h" style="color:#ca8a04">506</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~39,000名</td>
+  <td>493 二批 ⚠️估</td>
+  <td class="rk">~46,000名</td>
+  <td>502 二批 ⚠️估</td>
+  <td class="rk">~37,000名</td>
+  <td class="pred-near">~497</td>
+  <td class="v-near">⚠️ 恰好差0分，紧平衡</td>
+</tr>
+<tr class="r-pub" style="background:#fefce8!important;border-left:4px solid #fde047">
+  <td>40</td>
+  <td class="sch">
+    <div class="sname">新疆师范大学</div>
+    <div class="sloc">📍 新疆·乌鲁木齐市·沙依巴克区</div>
+    <span class="tag tkey">省重点</span>
+  </td>
+  <td>新疆</td>
+  <td><span class="sc-h" style="color:#ca8a04">506</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~39,000名</td>
+  <td>495 二批 ⚠️估</td>
+  <td class="rk">~45,000名</td>
+  <td>505 二批 ⚠️估</td>
+  <td class="rk">~37,000名</td>
+  <td class="pred-near">~495</td>
+  <td class="v-near">⚠️ 超你2分，可冲</td>
+</tr>
+
+<!-- ===== 我的497分分割线 ===== -->
+<tr class="my-line">
+  <td colspan="11">
+    🎯 ← 我的成绩：<strong>497分（2026届 · 超线+42分）</strong> · 预测分高于497分的学校在上方，低于497分的在下方（预测可报）
+  </td>
+</tr>
+
+<!-- 497分以下（可报） -->
+<tr class="grp grp-ok"><td colspan="11">✅ 以下院校2026年预测分 ≤ 497分 · 497分可报（请核实后填报）</td></tr>
+
+<tr class="r-ok">
+  <td>41</td>
+  <td class="sch">
+    <div class="sname">石河子大学（师范学院）</div>
+    <div class="sloc">📍 新疆生产建设兵团·石河子市</div>
+    <span class="tag tpub">公办·部属</span>
+  </td>
+  <td>新疆</td>
+  <td><span class="sc-h" style="color:#16a34a">496</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~40,000名</td>
+  <td>483 二批 ⚠️估</td>
+  <td class="rk">~48,000名</td>
+  <td>493 二批 ⚠️估</td>
+  <td class="rk">~38,000名</td>
+  <td class="pred-ok">~486</td>
+  <td class="v-ok">✅ 超你11分，可报</td>
+</tr>
+<tr class="r-ok">
+  <td>42</td>
+  <td class="sch">
+    <div class="sname">大理大学（师范学院）</div>
+    <div class="sloc">📍 云南·大理市·下关区（综合类含师范专业）</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>云南</td>
+  <td><span class="sc-h" style="color:#16a34a">494</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~42,000名</td>
+  <td>481 二批 ⚠️估</td>
+  <td class="rk">~50,000名</td>
+  <td>491 二批 ⚠️估</td>
+  <td class="rk">~39,000名</td>
+  <td class="pred-ok">~485</td>
+  <td class="v-ok">✅ 超你12分，可报</td>
+</tr>
+<tr class="r-ok">
+  <td>43</td>
+  <td class="sch">
+    <div class="sname">伊犁师范大学</div>
+    <div class="sloc">📍 新疆·伊宁市（伊犁哈萨克自治州）</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>新疆</td>
+  <td><span class="sc-h" style="color:#16a34a">500</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~45,000名</td>
+  <td>489 二批 ⚠️估</td>
+  <td class="rk">~52,000名</td>
+  <td>496 二批 ⚠️估</td>
+  <td class="rk">~41,000名</td>
+  <td class="pred-ok">~489</td>
+  <td class="v-ok">✅ 超你8分，稳报</td>
+</tr>
+<tr class="r-ok">
+  <td>44</td>
+  <td class="sch">
+    <div class="sname">宁夏师范学院</div>
+    <div class="sloc">📍 宁夏·固原市（六盘山脚下）</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>宁夏</td>
+  <td><span class="sc-h" style="color:#16a34a">500</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~45,000名</td>
+  <td>486 二批 ⚠️估</td>
+  <td class="rk">~55,000名</td>
+  <td>494 二批 ⚠️估</td>
+  <td class="rk">~47,000名</td>
+  <td class="pred-ok">~487</td>
+  <td class="v-ok">✅ 超你10分，稳报</td>
+</tr>
+<tr class="r-ok">
+  <td>45</td>
+  <td class="sch">
+    <div class="sname">玉溪师范学院</div>
+    <div class="sloc">📍 云南·玉溪市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>云南</td>
+  <td><span class="sc-h" style="color:#16a34a">495</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~42,000名</td>
+  <td>482 二批 ⚠️估</td>
+  <td class="rk">~50,000名</td>
+  <td>491 二批 ⚠️估</td>
+  <td class="rk">~40,000名</td>
+  <td class="pred-ok">~485</td>
+  <td class="v-ok">✅ 超你12分，稳报</td>
+</tr>
+<tr class="r-ok">
+  <td>46</td>
+  <td class="sch">
+    <div class="sname">玉林师范学院</div>
+    <div class="sloc">📍 广西·玉林市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>广西</td>
+  <td><span class="sc-h" style="color:#16a34a">492</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~43,000名</td>
+  <td>479 二批 ⚠️估</td>
+  <td class="rk">~53,000名</td>
+  <td>488 二批 ⚠️估</td>
+  <td class="rk">~41,000名</td>
+  <td class="pred-ok">~482</td>
+  <td class="v-ok">✅ 超你15分</td>
+</tr>
+<tr class="r-ok">
+  <td>47</td>
+  <td class="sch">
+    <div class="sname">喀什大学（师范学院）</div>
+    <div class="sloc">📍 新疆·喀什市（综合类含师范专业）</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>新疆</td>
+  <td><span class="sc-h" style="color:#16a34a">490</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~44,000名</td>
+  <td>477 二批 ⚠️估</td>
+  <td class="rk">~54,000名</td>
+  <td>486 二批 ⚠️估</td>
+  <td class="rk">~42,000名</td>
+  <td class="pred-ok">~480</td>
+  <td class="v-ok">✅ 超你17分</td>
+</tr>
+<tr class="r-ok">
+  <td>48</td>
+  <td class="sch">
+    <div class="sname">遵义师范学院</div>
+    <div class="sloc">📍 贵州·遵义市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>贵州</td>
+  <td><span class="sc-h" style="color:#16a34a">490</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~44,000名</td>
+  <td>476 二批 ⚠️估</td>
+  <td class="rk">~55,000名</td>
+  <td>485 二批 ⚠️估</td>
+  <td class="rk">~43,000名</td>
+  <td class="pred-ok">~480</td>
+  <td class="v-ok">✅ 超你17分</td>
+</tr>
+
+<!-- ===== 更稳的院校 ===== -->
+<tr class="grp grp-safe"><td colspan="11">✅✅ 以下院校余量更大（497分超出预测分 15分以上），稳妥保底选项</td></tr>
+
+<tr class="r-safe">
+  <td>49</td>
+  <td class="sch">
+    <div class="sname">通化师范学院</div>
+    <div class="sloc">📍 吉林·通化市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>吉林</td>
+  <td><span class="sc-h" style="color:#14532d">491</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~52,000名</td>
+  <td>479 二批 ⚠️估</td>
+  <td class="rk">~60,000名</td>
+  <td>488 二批 ⚠️估</td>
+  <td class="rk">~50,000名</td>
+  <td class="pred-ok">~480</td>
+  <td class="v-safe">✅✅ 余量17分</td>
+</tr>
+<tr class="r-safe">
+  <td>50</td>
+  <td class="sch">
+    <div class="sname">天水师范学院</div>
+    <div class="sloc">📍 甘肃·天水市（伏羲故里，近四川）</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>甘肃</td>
+  <td><span class="sc-h" style="color:#14532d">490</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~53,000名</td>
+  <td>477 二批 ⚠️估</td>
+  <td class="rk">~62,000名</td>
+  <td>486 二批 ⚠️估</td>
+  <td class="rk">~51,000名</td>
+  <td class="pred-ok">~479</td>
+  <td class="v-safe">✅✅ 余量18分</td>
+</tr>
+<tr class="r-safe">
+  <td>51</td>
+  <td class="sch">
+    <div class="sname">黔南民族师范学院</div>
+    <div class="sloc">📍 贵州·都匀市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>贵州</td>
+  <td><span class="sc-h" style="color:#14532d">487</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~55,000名</td>
+  <td>474 二批 ⚠️估</td>
+  <td class="rk">~63,000名</td>
+  <td>483 二批 ⚠️估</td>
+  <td class="rk">~52,000名</td>
+  <td class="pred-ok">~477</td>
+  <td class="v-safe">✅✅ 余量20分</td>
+</tr>
+<tr class="r-safe">
+  <td>52</td>
+  <td class="sch">
+    <div class="sname">河西学院（含师范专业）</div>
+    <div class="sloc">📍 甘肃·张掖市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>甘肃</td>
+  <td><span class="sc-h" style="color:#14532d">486</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~55,000名</td>
+  <td>473 二批 ⚠️估</td>
+  <td class="rk">~63,000名</td>
+  <td>482 二批 ⚠️估</td>
+  <td class="rk">~52,000名</td>
+  <td class="pred-ok">~476</td>
+  <td class="v-safe">✅✅ 余量21分</td>
+</tr>
+<tr class="r-safe">
+  <td>53</td>
+  <td class="sch">
+    <div class="sname">白城师范学院</div>
+    <div class="sloc">📍 吉林·白城市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>吉林</td>
+  <td><span class="sc-h" style="color:#14532d">484</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~56,000名</td>
+  <td>474 二批 ⚠️估</td>
+  <td class="rk">~63,000名</td>
+  <td>480 二批 ⚠️估</td>
+  <td class="rk">~55,000名</td>
+  <td class="pred-ok">~474</td>
+  <td class="v-safe">✅✅ 余量23分</td>
+</tr>
+<tr class="r-safe">
+  <td>54</td>
+  <td class="sch">
+    <div class="sname">甘肃民族师范学院</div>
+    <div class="sloc">📍 甘肃·甘南州合作市（近四川藏区）</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>甘肃</td>
+  <td><span class="sc-h" style="color:#14532d">484</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~56,000名</td>
+  <td>470 二批 ⚠️估</td>
+  <td class="rk">~65,000名</td>
+  <td>478 二批 ⚠️估</td>
+  <td class="rk">~55,000名</td>
+  <td class="pred-ok">~473</td>
+  <td class="v-safe">✅✅ 余量24分</td>
+</tr>
+<tr class="r-safe">
+  <td>55</td>
+  <td class="sch">
+    <div class="sname">集宁师范学院</div>
+    <div class="sloc">📍 内蒙古·乌兰察布市集宁区</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>内蒙古</td>
+  <td><span class="sc-h" style="color:#14532d">483</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~57,000名</td>
+  <td>470 二批 ⚠️估</td>
+  <td class="rk">~65,000名</td>
+  <td>478 二批 ⚠️估</td>
+  <td class="rk">~55,000名</td>
+  <td class="pred-ok">~473</td>
+  <td class="v-safe">✅✅ 余量24分</td>
+</tr>
+<tr class="r-safe">
+  <td>56</td>
+  <td class="sch">
+    <div class="sname">陇东学院（含师范专业）</div>
+    <div class="sloc">📍 甘肃·庆阳市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>甘肃</td>
+  <td><span class="sc-h" style="color:#14532d">481</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~58,000名</td>
+  <td>467 二批 ⚠️估</td>
+  <td class="rk">~66,000名</td>
+  <td>475 二批 ⚠️估</td>
+  <td class="rk">~56,000名</td>
+  <td class="pred-ok">~471</td>
+  <td class="v-safe">✅✅ 余量26分</td>
+</tr>
+<tr class="r-safe">
+  <td>57</td>
+  <td class="sch">
+    <div class="sname">百色学院（含师范专业）</div>
+    <div class="sloc">📍 广西·百色市</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>广西</td>
+  <td><span class="sc-h" style="color:#14532d">479</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~59,000名</td>
+  <td>465 二批 ⚠️估</td>
+  <td class="rk">~68,000名</td>
+  <td>473 二批 ⚠️估</td>
+  <td class="rk">~57,000名</td>
+  <td class="pred-ok">~469</td>
+  <td class="v-safe">✅✅ 余量28分</td>
+</tr>
+<tr class="r-safe">
+  <td>58</td>
+  <td class="sch">
+    <div class="sname">兴义民族师范学院</div>
+    <div class="sloc">📍 贵州·兴义市（万峰林景区旁）</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>贵州</td>
+  <td><span class="sc-h" style="color:#14532d">476</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~61,000名</td>
+  <td>462 二批 ⚠️估</td>
+  <td class="rk">~70,000名</td>
+  <td>470 二批 ⚠️估</td>
+  <td class="rk">~59,000名</td>
+  <td class="pred-ok">~466</td>
+  <td class="v-safe">✅✅ 余量31分</td>
+</tr>
+<tr class="r-safe">
+  <td>59</td>
+  <td class="sch">
+    <div class="sname">保山学院（含师范专业）</div>
+    <div class="sloc">📍 云南·保山市（滇西，近缅甸边境）</div>
+    <span class="tag tpub">公办</span>
+  </td>
+  <td>云南</td>
+  <td><span class="sc-h" style="color:#14532d">474</span><span class="sc-s">⚠️估</span></td>
+  <td class="rk">~62,000名</td>
+  <td>461 二批 ⚠️估</td>
+  <td class="rk">~70,000名</td>
+  <td>468 二批 ⚠️估</td>
+  <td class="rk">~60,000名</td>
+  <td class="pred-ok">~464</td>
+  <td class="v-safe">✅✅ 余量33分</td>
+</tr>
+
+<!-- 省控线行 -->
+<tr style="background:#ecfdf5;border-top:2px solid #059669">
+  <td style="color:#059669;font-weight:700">🆕</td>
+  <td colspan="2" style="color:#059669;font-weight:700;text-align:left;padding:10px">2026年四川历史类本科线</td>
+  <td style="color:#059669;font-weight:700">455</td>
+  <td colspan="5" style="color:#6b7280">—（录取数据2026年8月公布）</td>
+  <td style="color:#059669">455</td>
+  <td style="color:#059669;font-weight:700">2026年基准线</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== 497分可报汇总卡片 ===== -->
+<div class="sec">🎯 我的497分可报院校 · 分策略汇总 <span class="badge">重点参考</span></div>
+
+<div class="warn">⚠️ 以下所有数据均为估算（标注⚠️），误差约±10分。省外公办院校需异地就学，需综合考虑地理位置、生活成本、师范专业实力等因素。务必查官网及四川省教育考试院核实后再填报！</div>
+
+<div class="tw">
+<table class="sum-table">
+<thead>
+  <tr>
+    <th>志愿策略</th>
+    <th>学校名称</th>
+    <th>所在地</th>
+    <th>2025年<br>四川最低分</th>
+    <th>2026年<br>预测分</th>
+    <th>你的余量</th>
+    <th>备注</th>
+  </tr>
+</thead>
+<tbody>
+  <tr style="background:#fef2f2">
+    <td rowspan="2" style="font-weight:700;color:#dc2626;background:#fef2f2">🔴 冲<br>（高风险）</td>
+    <td>新疆师范大学</td>
+    <td>新疆·乌鲁木齐</td>
+    <td>506分</td>
+    <td>~495</td>
+    <td style="color:#16a34a">+2分</td>
+    <td>省属重点，师范实力较强，但远</td>
+  </tr>
+  <tr style="background:#fef2f2">
+    <td>曲靖师范学院</td>
+    <td>云南·曲靖</td>
+    <td>506分</td>
+    <td>~497</td>
+    <td style="color:#d97706">±0分</td>
+    <td>云南地方师范，离四川较近</td>
+  </tr>
+  <tr style="background:#fffbeb">
+    <td rowspan="4" style="font-weight:700;color:#d97706;background:#fffbeb">🟡 稳<br>（较稳妥）</td>
+    <td>伊犁师范大学</td>
+    <td>新疆·伊宁</td>
+    <td>500分</td>
+    <td>~489</td>
+    <td style="color:#16a34a">+8分</td>
+    <td>师范类专业为主，偏远</td>
+  </tr>
+  <tr style="background:#fffbeb">
+    <td>宁夏师范学院</td>
+    <td>宁夏·固原</td>
+    <td>500分</td>
+    <td>~487</td>
+    <td style="color:#16a34a">+10分</td>
+    <td>师范类专业完整，偏远</td>
+  </tr>
+  <tr style="background:#fffbeb">
+    <td>石河子大学（师范学院）</td>
+    <td>新疆·石河子</td>
+    <td>496分</td>
+    <td>~486</td>
+    <td style="color:#16a34a">+11分</td>
+    <td>兵团系高校，综合类，实力不错</td>
+  </tr>
+  <tr style="background:#fffbeb">
+    <td>大理大学（师范）</td>
+    <td>云南·大理</td>
+    <td>494分</td>
+    <td>~485</td>
+    <td style="color:#16a34a">+12分</td>
+    <td>综合类含师范，离四川近，景美</td>
+  </tr>
+  <tr style="background:#f0fdf4">
+    <td rowspan="5" style="font-weight:700;color:#15803d;background:#f0fdf4">🟢 保<br>（有余量）</td>
+    <td>通化师范学院</td>
+    <td>吉林·通化</td>
+    <td>491分</td>
+    <td>~480</td>
+    <td style="color:#15803d">+17分</td>
+    <td>师范类专业为主，东北地区</td>
+  </tr>
+  <tr style="background:#f0fdf4">
+    <td>天水师范学院</td>
+    <td>甘肃·天水</td>
+    <td>490分</td>
+    <td>~479</td>
+    <td style="color:#15803d">+18分</td>
+    <td>离四川较近（与成都同纬度），文化底蕴深</td>
+  </tr>
+  <tr style="background:#f0fdf4">
+    <td>黔南民族师范学院</td>
+    <td>贵州·都匀</td>
+    <td>487分</td>
+    <td>~477</td>
+    <td style="color:#15803d">+20分</td>
+    <td>贵州民族地区，离四川较近</td>
+  </tr>
+  <tr style="background:#f0fdf4">
+    <td>白城师范学院</td>
+    <td>吉林·白城</td>
+    <td>484分</td>
+    <td>~474</td>
+    <td style="color:#15803d">+23分</td>
+    <td>东北地区，稳妥保底选项</td>
+  </tr>
+  <tr style="background:#f0fdf4">
+    <td>甘肃民族师范学院</td>
+    <td>甘肃·甘南</td>
+    <td>484分</td>
+    <td>~473</td>
+    <td style="color:#15803d">+24分</td>
+    <td>甘南藏族自治州，离四川藏区近</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<!-- ===== 综合建议 ===== -->
+<div class="sec">💡 综合报考建议 <span class="badge">基于497分·2026届</span></div>
+
+<div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,.05)">
+<ol style="padding-left:22px;line-height:2.5;font-size:.93rem">
+  <li><strong>公办师范 vs 省内民办：</strong>公办省外学费约3000-6000元/年，比民办独立学院（2-5万/年）便宜很多，但需要跨省就学。如果经济条件有限，优先考虑省外公办师范（伊犁师范/宁夏师范等）；如果不想离家太远，可选省内民办（辽宁师范海华101组/吉林博达101组，学费较高但分数合适）。</li>
+  <li><strong>地理位置建议：</strong>距四川较近的可选方向——云南（大理大学、曲靖师范、玉溪师范、楚雄师范）、贵州（黔南师院、遵义师院、兴义师院）、甘肃（天水师院、甘肃民族师院）。新疆/吉林/内蒙古相对较远但分数更稳。</li>
+  <li><strong>志愿组合参考：</strong>
+    <ul style="margin-top:4px;padding-left:20px">
+      <li>🔴 冲一冲：新疆师范大学 或 曲靖师范学院</li>
+      <li>🟡 稳一稳：宁夏师范学院 + 伊犁师范大学</li>
+      <li>🟢 保一保：天水师范学院 + 通化师范学院 + 甘肃民族师范学院</li>
+    </ul>
+  </li>
+  <li><strong>省内选项补充：</strong>若坚持留四川，可关注<a href="index.html">省内民办独立学院</a>（辽宁师范海华101组~469分、吉林博达101/102组~473分，学费较高）；同时可考虑一些四川非师范公办院校的教育类专业（如小学教育、学前教育等）。</li>
+  <li><strong>⚠️ 数据核实：</strong>本页省外数据全部来自训练知识估算，误差约±10分。报志愿前务必通过各校官网、掌上高考、四川省教育考试院确认实际录取数据。建议重点核实伊犁师范大学、宁夏师范学院、曲靖师范学院、新疆师范大学的四川历年录取数据。</li>
+</ol>
+</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  <p>📅 整理日期：2026年6月25日 ｜ 历史数据：2023–2025年 ｜ 四川省内7所已核实（✅），省外数据为训练知识估算（⚠️）</p>
+  <p style="margin-top:6px">
+    参考来源：<a href="https://www.sceea.cn" target="_blank">四川省教育考试院</a> ·
+    <a href="https://www.gaokao.cn" target="_blank">掌上高考</a> ·
+    各高校官方招生网
+  </p>
+  <p style="margin-top:6px;opacity:.65">⚠️ 省外数据为估算，仅供报考方向参考，不作为报考依据。2026年实际录取以各省教育考试院官方公布为准。</p>
+</footer>
+
+</body>
+</html>
